@@ -34,7 +34,7 @@ import {
   ITEM_PHYSICS,
   type DroppedItem,
 } from "./model";
-import { loadAssets, createAnimations } from "./assets";
+import { assetUrl, loadAssets, createAnimations, STORY_MUSIC } from "./assets";
 import { UI, type Settings } from "./ui";
 import {
   newGame,
@@ -180,6 +180,9 @@ export class SurvivalScene extends Phaser.Scene {
   score?: Phaser.Sound.BaseSound;
   audio!: AudioDirector;
   wind?: Phaser.Sound.BaseSound;
+  forestAmbience?: Phaser.Sound.BaseSound;
+  seaAmbience?: Phaser.Sound.BaseSound;
+  campfireAmbience?: Phaser.Sound.BaseSound;
   spatialVoices: Phaser.Sound.BaseSound[] = [];
   casingQueue: { at: number; x: number; y: number }[] = [];
   heardProjectiles = new Set<string>();
@@ -272,12 +275,12 @@ export class SurvivalScene extends Phaser.Scene {
     this.game.canvas.addEventListener("contextmenu", (e) => e.preventDefault());
     this.ui.api = {
       start: (save) => this.start(save),
-      startStory: () => this.start(undefined, "story"),
+      startStory: () => this.startStory(),
       prologue: (showLogo, done) => this.playIntro(showLogo, done),
       pause: (p) => this.setPaused(p),
       save: () => this.save(),
       quit: () => this.quit(),
-      consume: (id) => this.use(id),
+      consume: (id, uid) => this.use(id, uid),
       craft: (id) => this.craftItem(id),
       rest: () => this.rest(),
       repair: () => this.repair(),
@@ -306,20 +309,17 @@ export class SurvivalScene extends Phaser.Scene {
         } else this.touchKeys.delete(key);
       },
     };
-    if (this.sound instanceof Phaser.Sound.WebAudioSoundManager) {
-      const sm = this.sound,
-        limiter = sm.context.createDynamicsCompressor();
-      limiter.threshold.value = -8;
-      limiter.knee.value = 12;
-      limiter.ratio.value = 5;
-      limiter.attack.value = 0.003;
-      limiter.release.value = 0.2;
-      sm.masterVolumeNode.disconnect();
-      sm.masterVolumeNode.connect(limiter);
-      limiter.connect(sm.context.destination);
-    }
     this.audio = new AudioDirector(this, this.ui.settings);
     this.wind = this.sound.add("horror-atmo", { loop: true, volume: 0.4 });
+    this.forestAmbience = this.sound.add("nature-forest", {
+      loop: true,
+      volume: 0,
+    });
+    this.seaAmbience = this.sound.add("nature-sea", { loop: true, volume: 0 });
+    this.campfireAmbience = this.sound.add("nature-campfire", {
+      loop: true,
+      volume: 0,
+    });
     this.nightSound = this.sound.add("night", { loop: true, volume: 0 });
     this.ui.loaded();
     this.physics.pause();
@@ -392,6 +392,18 @@ export class SurvivalScene extends Phaser.Scene {
   switchMusic(key: string) {
     this.score = this.audio.setMusic(key);
     this.musicKey = key;
+  }
+  startStory() {
+    if (this.cache.audio.exists("story-music-0")) {
+      this.start(undefined, "story");
+      return;
+    }
+    this.ui.toast("Carregando as músicas do modo História…");
+    Object.entries(STORY_MUSIC).forEach(([key, path]) =>
+      this.load.audio(key, assetUrl("assets/Sounds/" + path)),
+    );
+    this.load.once("complete", () => this.start(undefined, "story"));
+    this.load.start();
   }
   start(save?: SaveData, mode: "survival" | "story" = "survival") {
     this.scale.off("resize", this.resize, this);
@@ -508,8 +520,9 @@ export class SurvivalScene extends Phaser.Scene {
     });
     this.physics.add.overlap(this.bullets, this.zombies, (bullet, zombie) => {
       const b = bullet as Phaser.Physics.Arcade.Sprite,
-        z = zombie as Phaser.Physics.Arcade.Sprite;
-      if (!b.active || !z.active) return;
+        z = zombie as Phaser.Physics.Arcade.Sprite,
+        info = z.getData("info") as ZombieInfo;
+      if (!b.active || !z.active || info.hp <= 0) return;
       b.disableBody(true, true);
       this.hitZombie(z, b.getData("damage") ?? 42);
     });
@@ -782,7 +795,7 @@ export class SurvivalScene extends Phaser.Scene {
       .setAngle(-90)
       .setDepth(-940);
     this.add
-      .text(900, 1960, "ZONA DE QUARENTENA", {
+      .text(NUCLEAR_ZONE.x, NUCLEAR_ZONE.y + NUCLEAR_ZONE.ry + 45, "ZONA DE QUARENTENA", {
         fontFamily: "monospace",
         fontSize: "16px",
         color: "#b9b487",
@@ -791,8 +804,8 @@ export class SurvivalScene extends Phaser.Scene {
       .setDepth(-940);
     this.add
       .particles(0, 0, "mote", {
-        x: { min: 0, max: 3200 },
-        y: { min: 0, max: 2560 },
+        x: { min: 0, max: WORLD.width },
+        y: { min: 0, max: WORLD.height },
         quantity: 1,
         frequency: 80,
         lifespan: 9000,
@@ -1135,22 +1148,21 @@ export class SurvivalScene extends Phaser.Scene {
       let x = 180 + random() * (WORLD.width - 360),
         y = 180 + random() * (WORLD.height - 360),
         tries = 0;
+      const invalidSpawn = () =>
+        this.isBlocked(x, y) ||
+        isOcean(x, y) ||
+        isLake(x, y) ||
+        Math.hypot(x - this.player.x, y - this.player.y) < 440 ||
+        SHELTERS.some((s) => Math.hypot(x - s.x, y - s.y) < 150);
       while (
-        (this.isBlocked(x, y) ||
-          isOcean(x, y) ||
-          isLake(x, y) ||
-          Math.hypot(x - this.player.x, y - this.player.y) < 440 ||
-          SHELTERS.some((s) => Math.hypot(x - s.x, y - s.y) < 150)) &&
+        invalidSpawn() &&
         tries++ < 50
       ) {
         x = 180 + random() * (WORLD.width - 360);
         y = 180 + random() * (WORLD.height - 360);
       }
       if (
-        this.state.killed.includes(id) ||
-        this.isBlocked(x, y) ||
-        isOcean(x, y) ||
-        isLake(x, y)
+        this.state.killed.includes(id) || invalidSpawn()
       )
         continue;
       const kinds: ZombieInfo["kind"][] = [
@@ -1240,6 +1252,11 @@ export class SurvivalScene extends Phaser.Scene {
       (this.score as Phaser.Sound.WebAudioSound).setVolume(
         this.musicVolume() * (paused ? 0.4 : 1),
       );
+    if (paused) {
+      this.setLoopVolume(this.forestAmbience, 0);
+      this.setLoopVolume(this.seaAmbience, 0);
+      this.setLoopVolume(this.campfireAmbience, 0);
+    }
   }
   publish() {
     this.ui.update(
@@ -1275,6 +1292,9 @@ export class SurvivalScene extends Phaser.Scene {
     }
     this.fadingScores = [];
     this.wind?.stop();
+    this.forestAmbience?.stop();
+    this.seaAmbience?.stop();
+    this.campfireAmbience?.stop();
     this.storyMusic?.stop();
     this.storyMusic?.destroy();
     this.storyMusic = undefined;
@@ -1306,7 +1326,7 @@ export class SurvivalScene extends Phaser.Scene {
   drop(uid: string) {
     return this.command({ type: "drop", uid });
   }
-  use(id: ItemId) {
+  use(id: ItemId, uid?: string) {
     if (isWeapon(id)) {
       const gun = this.state.grid.find((g) => g.item === id);
       if (!gun) return "Você não tem essa arma.";
@@ -1315,7 +1335,7 @@ export class SurvivalScene extends Phaser.Scene {
       return message;
     }
     const before = this.state.inventory[id],
-      message = this.command({ type: "use", item: id });
+      message = this.command({ type: "use", item: id, uid });
     if (this.state.inventory[id] < before) {
       if (id === "water" || id === "dirtyWater") this.sfx("drink-real", 0.45);
       if (id === "smoke") {
@@ -1388,7 +1408,15 @@ export class SurvivalScene extends Phaser.Scene {
     this.settings = { ...settings };
     this.audio.configure(settings);
     if (this.score && !this.score.isPlaying && this.audio.ready()) this.score.play();
-    if (this.playing && !this.wind?.isPlaying) this.wind?.play();
+    if (this.playing && settings.sound && this.audio.ready()) {
+      for (const loop of [
+        this.wind,
+        this.forestAmbience,
+        this.seaAmbience,
+        this.campfireAmbience,
+      ])
+        if (loop && !loop.isPlaying) loop.play();
+    }
     const label = document.getElementById("menu-audio");
     if (label)
       label.textContent = !settings.sound
@@ -1401,12 +1429,19 @@ export class SurvivalScene extends Phaser.Scene {
       this.musicVolume() * (this.playing && this.paused ? 0.4 : 1),
     );
     (this.wind as Phaser.Sound.WebAudioSound | undefined)?.setVolume(
-      settings.effects * 0.09,
+      this.playing && this.paused ? 0 : settings.effects * 0.09,
     );
     if (this.nightSound?.isPlaying)
       (this.nightSound as Phaser.Sound.WebAudioSound).setVolume(
         this.paused ? 0 : settings.effects * 0.15,
       );
+  }
+  setLoopVolume(sound: Phaser.Sound.BaseSound | undefined, target: number) {
+    if (!sound) return;
+    const loop = sound as
+      | Phaser.Sound.WebAudioSound
+      | Phaser.Sound.HTML5AudioSound;
+    loop.setVolume(Phaser.Math.Linear(loop.volume, target, 0.12));
   }
   musicVolume(key = this.musicKey) {
     return this.settings.music * (key === "menu-music" ? 0.42 : 0.34);
@@ -1416,23 +1451,13 @@ export class SurvivalScene extends Phaser.Scene {
       reload: 0.28,
       equip: 0.12,
       "door-real": 0.12,
-      grass: 1.3,
-      grass2: 1.3,
-      mud: 0.9,
       growl: 0.7,
       hit: 0.65,
     };
     this.audio.effect(
       key,
       volume * (gain[key] ?? 1),
-      [
-          "grass",
-          "grass2",
-          "stone",
-          "mud",
-          "gravel",
-          "woodStep",
-        ].includes(key) ? Phaser.Math.FloatBetween(0.94, 1.06) : 1,
+      1,
     );
   }
   stopSpatial() {
@@ -1462,9 +1487,7 @@ export class SurvivalScene extends Phaser.Scene {
     if (distance >= 400) return;
     const sound = this.sound.add(key, {
       volume: Math.min(1, this.settings.effects * volume),
-      rate: ["mud", "gravel"].includes(key)
-        ? Phaser.Math.FloatBetween(0.94, 1.06)
-        : 1,
+      rate: 1,
       source: {
         x,
         y,
@@ -1743,10 +1766,10 @@ export class SurvivalScene extends Phaser.Scene {
         );
         if (item) {
           this.ui.selectedUid = item.uid;
-          if (isWeapon(item.item)) this.ui.toast(this.use(item.item));
+          if (isWeapon(item.item)) this.ui.toast(this.use(item.item, item.uid));
           else if (item.item.startsWith("backpack"))
             this.ui.toast(this.command({ type: "pack", uid: item.uid }));
-          else this.ui.toast(this.use(item.item));
+          else this.ui.toast(this.use(item.item, item.uid));
         }
       }
     this.findInteraction();
@@ -1962,16 +1985,18 @@ export class SurvivalScene extends Phaser.Scene {
         best = 450;
       this.zombies.getChildren().forEach((o) => {
         const z = o as Phaser.Physics.Arcade.Sprite,
+          info = z.getData("info") as ZombieInfo,
           d = Math.hypot(z.x - this.player.x, z.y - this.player.y);
-        if (z.active && d < best) {
+        if (z.active && info.hp > 0 && d < best) {
           best = d;
           nearest = z;
         }
       });
       if (nearest) return new Phaser.Math.Vector2(nearest.x, nearest.y - 12);
+      const angle = this.facing * (Math.PI / 4);
       return new Phaser.Math.Vector2(
-        this.player.x + (this.player.flipX ? -320 : 320),
-        this.player.y - 12,
+        this.player.x + Math.cos(angle) * 320,
+        this.player.y - 12 + Math.sin(angle) * 320,
       );
     }
     const p = this.input.activePointer,
@@ -1998,19 +2023,6 @@ export class SurvivalScene extends Phaser.Scene {
       }
       return;
     }
-    const r = this.session.dispatch({
-      actorId: this.session.playerId,
-      sequence: ++this.sequence,
-      action: { type: "fire" },
-    });
-    if (!r.accepted) {
-      if (r.message && this.state.elapsed - this.lastShot > 2) {
-        this.ui.toast(r.message);
-        this.lastShot = this.state.elapsed;
-      }
-      if (this.state.ammo <= 0) this.reload();
-      return;
-    }
     const spec = WEAPONS[weaponId(this.state)],
       now = this.state.elapsed,
       target = this.aimPoint(touch),
@@ -2030,7 +2042,22 @@ export class SurvivalScene extends Phaser.Scene {
         muzzle.y,
         "mote",
       ) as Phaser.Physics.Arcade.Sprite | null;
+    // Resource consumption belongs to a shot that can actually be presented.
     if (!b) return;
+    const r = this.session.dispatch({
+      actorId: this.session.playerId,
+      sequence: ++this.sequence,
+      action: { type: "fire" },
+    });
+    if (!r.accepted) {
+      b.disableBody(true, true);
+      if (r.message && this.state.elapsed - this.lastShot > 2) {
+        this.ui.toast(r.message);
+        this.lastShot = this.state.elapsed;
+      }
+      if (this.state.ammo <= 0) this.reload();
+      return;
+    }
     b.enableBody(true, muzzle.x, muzzle.y, true, true)
       .setAlpha(0)
       .setScale(1)
@@ -2756,8 +2783,8 @@ export class SurvivalScene extends Phaser.Scene {
         );
     const fog = this.add
       .particles(0, 0, "vignette", {
-        x: { min: 150, max: 3050 },
-        y: { min: 180, max: 2350 },
+        x: { min: WORLD.shore, max: WORLD.width - WORLD.shore },
+        y: { min: WORLD.shore, max: WORLD.height - WORLD.shore },
         frequency: 1600,
         lifespan: 22000,
         speedX: 9,
@@ -2787,6 +2814,32 @@ export class SurvivalScene extends Phaser.Scene {
     const now = this.state.elapsed;
     if (now - this.lastAmbience < 0.35) return;
     this.lastAmbience = now;
+    const muted = !this.settings.sound || this.paused,
+      outdoors = !this.inside(),
+      edgeDistance = Math.min(
+        this.player.x,
+        this.player.y,
+        (this.gameMode === "story" ? STORY_WORLD.width : WORLD.width) -
+          this.player.x,
+        (this.gameMode === "story" ? STORY_WORLD.height : WORLD.height) -
+          this.player.y,
+      ),
+      seaPresence =
+        this.gameMode === "survival" && outdoors
+          ? Math.max(0, 1 - Math.max(0, edgeDistance - WORLD.shore) / 720)
+          : 0;
+    this.setLoopVolume(
+      this.forestAmbience,
+      muted || !outdoors ? 0 : this.settings.effects * 0.11,
+    );
+    this.setLoopVolume(
+      this.seaAmbience,
+      muted ? 0 : this.settings.effects * 0.2 * seaPresence,
+    );
+    this.setLoopVolume(
+      this.campfireAmbience,
+      muted || !this.nearbyCamp ? 0 : this.settings.effects * 0.3,
+    );
     if (
       isNight(this.state.minutes) &&
       !this.inside() &&
