@@ -300,8 +300,12 @@ export function updateSurvival(
     (v.infection >= 30 ? v.infection / 140 : 0);
   v.health = clamp(v.health - dt * damage);
 }
-export function consume(state: SaveData, id: ItemId): string {
+export function consume(state: SaveData, id: ItemId, uid?: string): string {
   if (state.inventory[id] <= 0) return "Você não tem esse item.";
+  const selected = uid
+    ? state.grid.find((item) => item.uid === uid && item.item === id)
+    : state.grid.find((item) => item.item === id);
+  if (!selected) return "Item não encontrado na mochila.";
   const v = state.vitals;
   const n = NUTRITION[id];
   if (n?.raw) return "Cozinhe este alimento na fogueira ou no fogão.";
@@ -315,6 +319,7 @@ export function consume(state: SaveData, id: ItemId): string {
   } else if (id === "nightVision") {
     if (!state.inventory.battery) return "Precisa de uma bateria.";
     state.inventory.battery--;
+    reconcileGrid(state);
     state.gear ??= { mask: 0, nightVision: false };
     state.gear.nightVision = true;
   } else if (id === "grenade" || id === "smoke" || id === "musicRadio") {
@@ -331,7 +336,16 @@ export function consume(state: SaveData, id: ItemId): string {
   } else if (id === "bandage") v.health = clamp(v.health + 25);
   else if (id === "medicine") v.infection = clamp(v.infection - 40);
   else return "Este item é utilizado na fabricação ou no equipamento.";
+  if (id === "food" && selected.durability < 25)
+    v.infection = clamp(v.infection + 10);
   state.inventory[id]--;
+  selected.count--;
+  if (selected.count <= 0) {
+    state.grid = state.grid.filter((item) => item.uid !== selected.uid);
+    state.hotbar = state.hotbar.map((itemUid) =>
+      itemUid === selected.uid ? null : itemUid,
+    );
+  }
   reconcileGrid(state);
   return `${ITEMS[id].name} utilizado.`;
 }
@@ -431,8 +445,8 @@ export function craft(
     reinforces = id === "barricade" || id === "reinforce";
   if ((reinforces || id === "purify") && !shelterId)
     return "Entre em um abrigo para fazer isso.";
-  if (id === "armor" && state.vitals.armor > 0)
-    return "Você já está usando proteção.";
+  if (id === "armor" && state.vitals.armor >= 35)
+    return "Você já está usando proteção igual ou melhor.";
   if (reinforces && shelterId && state.shelters[shelterId].barricaded)
     return "Este abrigo já está reforçado.";
   if (createsCamp && shelterId)
@@ -655,16 +669,7 @@ export function validateSave(raw: unknown): SaveData | null {
     )
   )
     return null;
-  if (
-    !legacy &&
-    Object.keys(ITEMS).some(
-      (id) =>
-        copy.grid
-          .filter((g) => g.item === id)
-          .reduce((n, g) => n + g.count, 0) !== copy.inventory[id as ItemId],
-    )
-  )
-    return null;
+  if (!legacy && !inventoryMatchesGrid(copy)) return null;
   for (const [id, inv] of Object.entries(copy.containers))
     copy.containers[id] = { ...emptyInventory(), ...inv };
   reconcileGrid(copy);
@@ -762,6 +767,14 @@ export function carryWeight(s: SaveData) {
       (sum, [id, n]) => sum + ITEM_PHYSICS[id as ItemId].weight * n,
       0,
     )
+  );
+}
+export function inventoryMatchesGrid(s: SaveData) {
+  return (Object.keys(ITEMS) as ItemId[]).every(
+    (id) =>
+      s.grid
+        .filter((item) => item.item === id)
+        .reduce((total, item) => total + item.count, 0) === s.inventory[id],
   );
 }
 export function canPlace(s: SaveData, uid: string, x: number, y: number) {
@@ -933,18 +946,30 @@ export function repairWeapon(s: SaveData) {
 
 /** Decay is based on active simulation time and survives save/load through durability. */
 export function ageFood(state: SaveData, dt: number) {
+  if (!Number.isFinite(dt) || dt <= 0) return;
   for (const g of state.grid) {
     const life = g.item === "food" ? 480 : NUTRITION[g.item]?.lifetime;
     if (life) {
       g.durability = clamp(g.durability - (dt * 100) / life);
       if (g.durability <= 0) {
-        state.inventory[g.item] -= g.count;
+        const freshId = g.item;
+        const converted = Math.min(
+          g.count,
+          Math.max(0, state.inventory[freshId] || 0),
+        );
+        state.inventory[freshId] = Math.max(
+          0,
+          (state.inventory[freshId] || 0) - converted,
+        );
         g.item = "spoiled";
+        g.count = converted;
         g.durability = 0;
-        state.inventory.spoiled += g.count;
+        state.inventory.spoiled += converted;
       }
     }
   }
+  state.grid = state.grid.filter((item) => item.count > 0);
+  reconcileGrid(state);
 }
 export function foodLifetime(id: ItemId) {
   return id === "food" ? 480 : NUTRITION[id]?.lifetime || 0;

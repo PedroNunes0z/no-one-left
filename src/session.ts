@@ -2,6 +2,7 @@ import { WEAPONS, weaponId, isWeapon } from "./weapons.ts";
 import {
   PACKS,
   carryWeight,
+  inventoryMatchesGrid,
   ageFood,
   foodLifetime,
   addItem,
@@ -42,7 +43,7 @@ export interface MoveIntent {
 }
 export type Action =
   | { type: "move"; intent: MoveIntent }
-  | { type: "use"; item: ItemId }
+  | { type: "use"; item: ItemId; uid?: string }
   | { type: "collect"; target: EntityId }
   | { type: "drop"; uid: string }
   | { type: "grid"; uid: string; x: number; y: number }
@@ -234,11 +235,7 @@ export class LocalSession implements AuthorityPort {
         runtime.intent = { ...a.intent };
         break;
       case "use": {
-        const food = s.grid.find((i) => i.item === a.item);
-        if (a.item === "food" && food && food.durability < 25) {
-          s.vitals.infection = clamp(s.vitals.infection + 10);
-        }
-        message = consume(s, a.item);
+        message = consume(s, a.item, a.uid);
         break;
       }
       case "collect": {
@@ -297,7 +294,10 @@ export class LocalSession implements AuthorityPort {
         break;
       }
       case "pack":
-        message = equipPack(s, a.uid);
+        if (runtime.reloadAt) {
+          accepted = false;
+          message = "Aguarde a recarga terminar.";
+        } else message = equipPack(s, a.uid);
         break;
       case "craft": {
         const copy = structuredClone(s);
@@ -312,10 +312,7 @@ export class LocalSession implements AuthorityPort {
           if (carryWeight(copy) > PACKS[copy.backpack].capacity + 0.001) {
             message = "Peso máximo excedido.";
             accepted = false;
-          } else if (
-            copy.grid.reduce((n, i) => n + i.count, 0) !==
-            Object.values(copy.inventory).reduce((n, c) => n + c, 0)
-          ) {
+          } else if (!inventoryMatchesGrid(copy)) {
             message = "Não há espaço para o item fabricado.";
             accepted = false;
           } else Object.assign(s, copy);
@@ -442,6 +439,15 @@ export class LocalSession implements AuthorityPort {
       if (attacker) {
         attacker.kills++;
         attacker.killed.push(id);
+        if (attacker.killed.length > 2000) {
+          const initial = attacker.killed.filter(
+            (killedId) => !killedId.startsWith("zombie-w"),
+          );
+          const waves = attacker.killed
+            .filter((killedId) => killedId.startsWith("zombie-w"))
+            .slice(-(2000 - initial.length));
+          attacker.killed = [...initial, ...waves];
+        }
       }
     }
     return !a.alive;

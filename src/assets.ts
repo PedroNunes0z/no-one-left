@@ -4,12 +4,9 @@ export const assetUrl = (path: string) =>
   "/" + path.split("/").map(encodeURIComponent).join("/");
 export const images: Record<string, string> = {
   ...SUPPLY_IMAGES,
-  splash: "assets/Photos/Neclear-usine.png",
   grassBase: "assets/Map/Grass/Grass 1 - 128x128.png",
   grassOvercast: "assets/Map/Grass/grass_overcast.png",
   grassGen1: "assets/Map/Grass/ground_grass_gen_01.png",
-  grassGen4: "assets/Map/Grass/ground_grass_gen_04.png",
-  grassGen7: "assets/Map/Grass/ground_grass_gen_07.png",
   isoBuilding1:
     "assets/Map/Isometric/Building-tiles/Isometric Buildings 1 - 64x96.png",
   isoBuilding2:
@@ -45,8 +42,6 @@ export const images: Record<string, string> = {
     "assets/Map/Zombie Apocalypse Tileset/Organized separated sprites/Modular Big Building/Zombie-Tileset---_0007_Capa-8.png",
   urban0012:
     "assets/Map/Zombie Apocalypse Tileset/Organized separated sprites/Modular Big Building/Zombie-Tileset---_0012_Capa-13.png",
-  urban0015:
-    "assets/Map/Zombie Apocalypse Tileset/Organized separated sprites/Modular Big Building/Zombie-Tileset---_0015_Capa-16.png",
   urban0132:
     "assets/Map/Zombie Apocalypse Tileset/Organized separated sprites/Modular Fences/Zombie-Tileset---_0132_Capa-133.png",
   urban0133:
@@ -92,14 +87,6 @@ export const images: Record<string, string> = {
     "assets/Map/Zombie Apocalypse Tileset/Organized separated sprites/Urban Assets/Zombie-Tileset---_0160_Capa-161.png",
   urban0162:
     "assets/Map/Zombie Apocalypse Tileset/Organized separated sprites/Urban Assets/Zombie-Tileset---_0162_Capa-163.png",
-  urban0179:
-    "assets/Map/Zombie Apocalypse Tileset/Organized separated sprites/Broken Cars and Tires/Zombie-Tileset---_0179_Capa-180.png",
-  urban0181:
-    "assets/Map/Zombie Apocalypse Tileset/Organized separated sprites/Broken Cars and Tires/Zombie-Tileset---_0181_Capa-182.png",
-  urban0184:
-    "assets/Map/Zombie Apocalypse Tileset/Organized separated sprites/Broken Cars and Tires/Zombie-Tileset---_0184_Capa-185.png",
-  urban0190:
-    "assets/Map/Zombie Apocalypse Tileset/Organized separated sprites/Broken Cars and Tires/Zombie-Tileset---_0190_Capa-191.png",
   urban0134:
     "assets/Map/Zombie Apocalypse Tileset/Organized separated sprites/Trees/Zombie-Tileset---_0134_Capa-135.png",
   urban0135:
@@ -176,6 +163,17 @@ export const actors = [
     actions: ["Idle", "Walk", "Attack", "Hurt", "Dead"],
   })),
 ];
+export const STORY_MUSIC: Record<string, string> = {
+  "story-music-0":
+    "Eletronic_Music/den_elbriggs__eddie_lung-experimental-background-trance-beat-272688.mp3",
+  "story-music-1": "Eletronic_Music/imia-rek-cursed-lands-393777.mp3",
+  "story-music-2": "Eletronic_Music/mixkit-autofahren-770.mp3",
+  "story-music-3": "Eletronic_Music/mixkit-infected-vibes-157.mp3",
+  "story-music-4":
+    "Eletronic_Music/out-in-the-night-otto-mp3-main-version-45586-02-45.mp3",
+  "story-music-5":
+    "Eletronic_Music/sonofabutcher-post-apocalyptic-378441.mp3",
+};
 
 export function loadAssets(scene: Phaser.Scene) {
   Object.entries(images).forEach(([key, path]) =>
@@ -206,12 +204,6 @@ export function loadAssets(scene: Phaser.Scene) {
     night: "night.mp3",
     "score-dark": "score-dark.ogg",
     "score-ruins": "score-ruins.ogg",
-    stone: "stone01.ogg",
-    grass: "leaves01.ogg",
-    grass2: "leaves02.ogg",
-    mud: "mud02.ogg",
-    gravel: "gravel.ogg",
-    woodStep: "wood01.ogg",
   };
   Object.entries(recordings).forEach(([key, file]) =>
     scene.load.audio(key, "/audio/recorded/" + file),
@@ -226,13 +218,10 @@ export function loadAssets(scene: Phaser.Scene) {
     "ui-close": "Interface/user-interface-menu-closed.wav",
     "backpack-open": "Sample_A_Sound_Effect/BackpackPickUp.wav",
     "backpack-close": "Sample_A_Sound_Effect/Backpack_Drop.wav",
-    "fire-loop": "Ambient/object-fire-01.wav",
     geiger: "Ambient/geiger.mp3",
-    radiation: "Ambient/radiation.mp3",
     "radio-bip": "Ambient/bip-radio.mp3",
     "horror-atmo":
       "Ambient/atmo-horror-drone-deep-synth-metal-creak-loop-01.wav",
-    "ghost-birds": "Ambient/atmo-horror-ghost-birds-02.wav",
     "wild-step-1": "Zombies/heavy_footsteps.wav",
     "wild-step-2": "Zombies/heavy_footsteps-02.wav",
     "zombie-breath": "Zombies/zombie-breath.mp3",
@@ -267,23 +256,10 @@ export function loadAssets(scene: Phaser.Scene) {
       "Footsteps_Essentials/Footsteps_Wood/Footsteps_Wood_Walk/Footsteps_Wood_Walk_01.wav",
     "wood-step-2":
       "Footsteps_Essentials/Footsteps_Wood/Footsteps_Wood_Walk/Footsteps_Wood_Walk_02.wav",
-    "electro-nuclear":
-      "Electromagnetic/Electromagnetic_Nuc_On_Mono_Elektrousi.wav",
-    "electro-engine":
-      "Electromagnetic/Electromagnetic_Engine_Pool_Loop_Mono_Elektrousi.wav",
     "nature-sea": "Nature_Essentials/Ambiance_Sea_Loop_Stereo.wav",
     "nature-forest": "Nature_Essentials/Ambiance_Wind_Forest_Loop_Stereo.wav",
     "nature-campfire":
       "Nature_Essentials/Ambiance_Firecamp_Medium_Loop_Mono.wav",
-    "story-music-0":
-      "Eletronic_Music/den_elbriggs__eddie_lung-experimental-background-trance-beat-272688.mp3",
-    "story-music-1": "Eletronic_Music/imia-rek-cursed-lands-393777.mp3",
-    "story-music-2": "Eletronic_Music/mixkit-autofahren-770.mp3",
-    "story-music-3": "Eletronic_Music/mixkit-infected-vibes-157.mp3",
-    "story-music-4":
-      "Eletronic_Music/out-in-the-night-otto-mp3-main-version-45586-02-45.mp3",
-    "story-music-5":
-      "Eletronic_Music/sonofabutcher-post-apocalyptic-378441.mp3",
     "shot-pistol": "Weapons/pistol-fire.wav",
     "reload-pistol": "Weapons/pistol-reload.mp3",
     "shot-rifle": "Weapons/assault-rifle-fire.wav",

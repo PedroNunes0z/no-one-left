@@ -48,7 +48,7 @@ export interface GameApi {
   pause: (paused: boolean) => void;
   save: () => boolean;
   quit: () => void;
-  consume: (id: ItemId) => string;
+  consume: (id: ItemId, uid?: string) => string;
   craft: (id: RecipeId) => string;
   rest: () => string;
   repair: () => string;
@@ -120,6 +120,8 @@ export class UI {
   currentShelter = "";
   nearbyCamp = false;
   dayTransitionTimer = 0;
+  lastHotbarSignature = "";
+  lastMinimapAt = 0;
   root = document.getElementById("ui")!;
 
   constructor() {
@@ -297,9 +299,7 @@ export class UI {
     document.getElementById("loading")!.classList.add("hidden");
   }
   activateAudio() {
-    this.settings.sound = true;
-    localStorage.setItem("no-one-left.settings", JSON.stringify(this.settings));
-    this.api?.activateAudio();
+    if (this.settings.sound) this.api?.activateAudio();
   }
 
   loadingError(file: string) {
@@ -381,8 +381,24 @@ export class UI {
       spec.name.toUpperCase() + " [R]";
     document.getElementById("ammo")!.textContent =
       `${state.ammo} / ${state.inventory.ammo}`;
-    this.renderHotbar();
-    this.drawMinimap();
+    const hotbarSignature = JSON.stringify({
+      hotbar: state.hotbar,
+      grid: state.grid.map(({ uid, item, count, durability }) => [
+        uid,
+        item,
+        count,
+        Math.ceil(durability),
+      ]),
+    });
+    if (hotbarSignature !== this.lastHotbarSignature) {
+      this.lastHotbarSignature = hotbarSignature;
+      this.renderHotbar();
+    }
+    const now = performance.now();
+    if (now - this.lastMinimapAt >= 300) {
+      this.lastMinimapAt = now;
+      this.drawMinimap();
+    }
     const sceneMode = this.root.dataset.mode || "survival";
     const objectiveLabel = this.root.querySelector<HTMLElement>(
       ".objective .eyebrow",
@@ -584,7 +600,7 @@ export class UI {
       this.modal(
         "O que você carrega",
         "MOCHILA DO SOBREVIVENTE",
-        `${tabs}${body}<div class="modal-foot"><span>${s.vitals.armor > 0 ? "Proteção equipada · 35% de redução de dano" : "Sem proteção equipada"}</span><span>Arraste para organizar · selecione e use G para soltar.</span></div>`,
+        `${tabs}${body}<div class="modal-foot"><span>${s.vitals.armor > 0 ? `Proteção equipada · ${Math.round(s.vitals.armor)}% de redução de dano` : "Sem proteção equipada"}</span><span>Arraste para organizar · selecione e use G para soltar.</span></div>`,
       );
       return;
     }
@@ -888,7 +904,7 @@ export class UI {
       ? "LOBBY LOCAL · ZONA PACÍFICA"
       : this.currentShelter
         ? "INTERIOR DO BUNKER"
-        : Math.round(s.x / 32) + " / " + Math.round(s.y / 32) + " · 38 m";
+        : `X ${Math.round(s.x / 32)} · Y ${Math.round(s.y / 32)}`;
   }
   drawMap() {
     if (!this.state) return;
@@ -955,7 +971,7 @@ export class UI {
         this.toast(
           item.item.startsWith("backpack")
             ? this.api?.equip(item.uid) || ""
-            : this.api?.consume(item.item) || "",
+            : this.api?.consume(item.item, item.uid) || "",
         );
       }
       return;
@@ -982,7 +998,11 @@ export class UI {
       return;
     }
     if (b.dataset.use) {
-      this.toast(this.api?.consume(b.dataset.use as ItemId) || "");
+      const id = b.dataset.use as ItemId;
+      const uid = this.state?.grid.find(
+        (item) => item.uid === this.selectedUid && item.item === id,
+      )?.uid;
+      this.toast(this.api?.consume(id, uid) || "");
       if (this.panel) this.render();
       return;
     }
@@ -1006,11 +1026,8 @@ export class UI {
     switch (b.dataset.action) {
       case "intro-continue":
         this.activateAudio();
-        b.disabled = true;
-        this.api?.prologue(
-          () => {},
-          () => document.getElementById("prologue")?.classList.add("hidden"),
-        );
+        document.getElementById("prologue")?.classList.add("hidden");
+        this.api?.prologue(() => {}, () => {});
         break;
       case "story":
         this.root.dataset.mode = "story";

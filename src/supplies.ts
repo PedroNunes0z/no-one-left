@@ -195,7 +195,7 @@ export const EXTRA_ITEMS = {
   },
   gasMask: {
     name: "Máscara de gás",
-    description: "Equipar: reduz a contaminação do pântano em 85%.",
+    description: "Equipar: reduz a contaminação da zona radioativa em 85%.",
     icon: "gasMask",
     category: "Equipamento",
   },
@@ -221,7 +221,7 @@ export const EXTRA_ITEMS = {
   },
   mask: {
     name: "Máscara",
-    description: "Equipar: reduz a contaminação do pântano em 50%.",
+    description: "Equipar: reduz a contaminação da zona radioativa em 50%.",
     icon: "mask",
     category: "Equipamento",
   },
