@@ -1,0 +1,419 @@
+DESCRIÇÃO INDIVIDUAL DO TILESET — dead-swamp-v4.png
+=====================================================
+
+Tamanho da imagem: 256 × 1632 px
+Tipo: atlas vertical de cenário / props em pixel art
+Tema principal: pântano morto, área tribal, vila rústica, cercas, palha, madeira e vegetação seca
+
+ORIGEM DAS COORDENADAS
+----------------------
+- canto superior esquerdo
+- X cresce para a direita
+- Y cresce para baixo
+
+VISÃO GERAL
+-----------
+Este tileset reúne elementos modulares e decorativos para montar ambientes de:
+- pântano seco ou morto;
+- aldeia tribal/rústica;
+- cercados de madeira;
+- passarelas elevadas;
+- construções de palha;
+- áreas pantanosas;
+- vegetação morta;
+- ruínas naturais.
+
+A imagem é longa e vertical, com vários grupos de sprites diferentes.
+O ideal é tratar cada peça como sprite independente ou recortar por região.
+
+=====================================================
+1. TOPO — PAREDES, PALHA E PEÇAS DE CONSTRUÇÃO
+=====================================================
+
+[01] Grande painel/parede de madeira
+Posição: topo esquerdo
+Descrição:
+- parede retangular formada por tábuas verticais;
+- madeira envelhecida;
+- aparência de cabana, celeiro ou paliçada.
+
+[02] Conjunto de bambus/canos amarelos
+Posição: topo central
+Descrição:
+- vários segmentos verticais arredondados;
+- agrupados como cerca, tubos ou varas;
+- podem servir como material de construção tribal.
+
+[03] Pequena cobertura horizontal de madeira
+Posição: topo direito
+Descrição:
+- travessa horizontal;
+- abaixo há uma cortina/tecido roxo pendurado;
+- pode funcionar como entrada decorada, porta improvisada ou divisória.
+
+[04] Faixa larga de palha/cerca amarela
+Posição: logo abaixo do grande painel de madeira
+Descrição:
+- segmento horizontal comprido;
+- textura de fibras/palha;
+- útil como parede baixa, cerca ou cobertura.
+
+[05] Pequena caixa/caixote de madeira
+Posição: região superior central
+Descrição:
+- objeto quadrado com reforço diagonal;
+- pode ser usado como caixa, engradado ou apoio.
+
+[06] Porta arqueada de madeira
+Posição: superior direita
+Descrição:
+- porta alta com topo arredondado;
+- reforços metálicos claros;
+- grande dobradiça/trava;
+- útil para cabanas, fortalezas tribais ou portões.
+
+=====================================================
+2. COBERTURA DE PALHA E ESTRUTURA DE MADEIRA
+=====================================================
+
+[07] Grande cobertura/telhado de palha
+Posição: região superior-média esquerda
+Descrição:
+- duas grandes folhas ou camadas de palha;
+- aparência orgânica;
+- pode ser usada como:
+  - telhado;
+  - cobertura de cabana;
+  - teto de tenda;
+  - folhagem seca gigante.
+
+[08] Estrutura vertical de ripas de madeira
+Posição: região superior-média direita
+Descrição:
+- conjunto de tábuas verticais irregulares;
+- apoiadas sobre travessas;
+- pode funcionar como:
+  - barricada;
+  - parede improvisada;
+  - portão quebrado;
+  - plataforma vertical.
+
+=====================================================
+3. PASSARELAS E PLATAFORMAS DE MADEIRA
+=====================================================
+
+[09] Plataforma/passarela horizontal elevada
+Posição: região média superior
+Descrição:
+- piso de tábuas;
+- estrutura sustentada por postes;
+- aparência de passarela sobre água ou lama;
+- pode ser combinada com segmentos de apoio.
+
+[10] Segmentos verticais de postes e travessas
+Posição: logo abaixo da passarela
+Descrição:
+- várias hastes verticais;
+- travessas horizontais com amarrações;
+- funcionam como partes modulares de:
+  - ponte;
+  - cais;
+  - passarela;
+  - estrutura elevada.
+
+[11] Moldura/plataforma quadrada com ripas
+Posição: região média direita
+Descrição:
+- quadrado grande de madeira;
+- borda reforçada;
+- ripas no topo e na base;
+- pode representar:
+  - plataforma;
+  - piso;
+  - janela gradeada;
+  - seção de construção.
+
+=====================================================
+4. CERCAS DE PALHA E PORTAIS
+=====================================================
+
+[12] Grande cerca/painel trançado amarelo
+Posição: região central esquerda
+Descrição:
+- painel retangular largo;
+- padrão cruzado/trançado;
+- dividido por postes verticais;
+- aspecto de cerca de junco/palha.
+
+[13] Portal arqueado de madeira — variante 1
+Posição: centro-direita
+Descrição:
+- estrutura alta em formato de arco;
+- pilares de madeira amarrados;
+- abertura central escura;
+- pode ser usada como:
+  - entrada de aldeia;
+  - arco de ponte;
+  - portal de cerca.
+
+[14] Cerca de rede/galhos escuros
+Posição: região central inferior esquerda
+Descrição:
+- textura de trama escura;
+- aparência de rede, galhos ou cerca desgastada;
+- usada como barreira ou cerca de área pantanosa.
+
+[15] Portal arqueado de madeira — variante 2
+Posição: centro inferior
+Descrição:
+- semelhante ao anterior;
+- repetição/variação para conexão entre módulos.
+
+[16] Portal arqueado de madeira — variante 3
+Posição: centro inferior direito
+Descrição:
+- outra peça de arco;
+- útil para montar fileiras de cercas e passagens.
+
+[17] Pequeno segmento vertical de portal/cerca
+Posição: extrema direita da região central
+Descrição:
+- trecho estreito de postes amarrados;
+- pode completar os portais maiores.
+
+=====================================================
+5. CORTINAS, VARAIS E PASSAGENS
+=====================================================
+
+[18] Portal com tecido bege pendurado
+Posição: região abaixo dos portais
+Descrição:
+- estrutura arqueada;
+- tecido grande preso entre os postes;
+- barra inferior rasgada;
+- pode servir como:
+  - entrada de tenda;
+  - cortina;
+  - divisor de ambiente;
+  - cobertura improvisada.
+
+[19] Portal vazio — variante 1
+Posição: centro
+Descrição:
+- arco simples sem tecido;
+- pode ser usado como módulo de entrada.
+
+[20] Portal vazio — variante 2
+Posição: direita
+Descrição:
+- semelhante ao anterior;
+- possui corda/gancho pendurado em uma das laterais.
+
+[21] Cordas horizontais com peças penduradas
+Posição: região inferior média
+Descrição:
+- várias composições de corda;
+- algumas com pequenas tábuas, varas ou amarrações;
+- podem representar:
+  - varal;
+  - ponte de corda;
+  - armadilha;
+  - decoração tribal.
+
+[22] Ponte/corda com ripas suspensas
+Posição: mesma faixa
+Descrição:
+- ripas pequenas presas a cordas;
+- aparência de pequena ponte suspensa ou passarela leve.
+
+=====================================================
+6. OBJETOS TRIBAIS E DECORAÇÃO
+=====================================================
+
+[23] Estrutura circular/ritual com cordas
+Posição: região inferior média
+Descrição:
+- objeto grande e simétrico;
+- cordas, galhos e detalhes pendurados;
+- centro com pequeno objeto/ornamento;
+- pode ser:
+  - altar;
+  - decoração tribal;
+  - armadilha;
+  - estrutura ritualística.
+
+[24] Tripé de madeira
+Posição: ao lado da estrutura ritual
+Descrição:
+- três varas altas inclinadas;
+- amarração na parte superior;
+- pequenos objetos presos;
+- pode ser usada como:
+  - suporte;
+  - fogueira;
+  - secador;
+  - altar tribal.
+
+[25] Pequena caveira/objeto pendurado
+Posição: região próxima ao tripé
+Descrição:
+- pequeno item claro;
+- pode representar caveira, osso ou enfeite.
+
+[26] Cordas com pequenos objetos pendurados
+Posição: abaixo
+Descrição:
+- linha fina horizontal;
+- pequenos nós/penduricalhos;
+- útil como decoração de acampamento.
+
+=====================================================
+7. ÁRVORES MORTAS E RAÍZES
+=====================================================
+
+[27] Grande tronco retorcido horizontal
+Posição: região inferior
+Descrição:
+- tronco morto com galhos sinuosos;
+- forma irregular e alongada;
+- excelente para cenário de pântano.
+
+[28] Árvore morta inclinada — variante 1
+Posição: região inferior central
+Descrição:
+- tronco retorcido;
+- galhos longos e sem folhas;
+- aparência de árvore caída ou deformada.
+
+[29] Árvore morta vertical — variante 1
+Posição: região inferior direita
+Descrição:
+- tronco alto e fino;
+- poucos galhos;
+- visual seco e decadente.
+
+[30] Árvore morta com musgo/cordas — variante 2
+Posição: abaixo
+Descrição:
+- tronco irregular;
+- galhos retorcidos;
+- vegetação/musgo pendurado.
+
+[31] Árvore morta vertical — variante 2
+Posição: direita
+Descrição:
+- árvore alta com galhos secos;
+- pequenos elementos pendentes.
+
+[32] Toco grande quebrado
+Posição: parte inferior esquerda
+Descrição:
+- toco grosso;
+- madeira quebrada na parte superior;
+- base larga.
+
+[33] Pequeno galho/arbusto seco
+Posição: próximo ao toco
+Descrição:
+- galho fino com ramificações;
+- pode preencher áreas vazias do cenário.
+
+=====================================================
+8. PLANTAS MORTAS, JUNCO E DETALHES DE PÂNTANO
+=====================================================
+
+[34] Junco/galhos finos
+Posição: região inferior direita
+Descrição:
+- pequenos talos verticais;
+- aparência de capim seco ou vegetação de brejo.
+
+[35] Plantas com pontas amarelas
+Posição: extrema direita inferior
+Descrição:
+- hastes altas;
+- pequenas extremidades amarelas;
+- podem representar:
+  - juncos;
+  - flores mortas;
+  - vegetação pantanosa.
+
+[36] Pequenos detritos e folhas
+Posição: base da imagem
+Descrição:
+- pequenos fragmentos espalhados;
+- usados como detalhe de chão.
+
+=====================================================
+RESUMO POR CATEGORIA
+=====================================================
+
+CONSTRUÇÃO
+- paredes de madeira;
+- peças de bambu;
+- cortina roxa;
+- porta arqueada;
+- plataforma;
+- passarela;
+- moldura quadrada.
+
+CERCAS E PORTAIS
+- cerca de palha;
+- cerca trançada;
+- cerca de rede;
+- vários arcos e portais;
+- postes modulares.
+
+DECORAÇÃO
+- caixas;
+- cordas;
+- varais;
+- tecido pendurado;
+- estrutura ritual;
+- tripé;
+- caveira/ornamento.
+
+VEGETAÇÃO
+- telhado/folhagem de palha;
+- árvores mortas;
+- troncos;
+- raízes;
+- juncos;
+- galhos secos;
+- plantas pantanosas.
+
+=====================================================
+USO SUGERIDO
+=====================================================
+
+Ideal para:
+- pântano morto;
+- vila tribal;
+- aldeia abandonada;
+- acampamento selvagem;
+- área de bruxaria;
+- ruína pantanosa;
+- dungeon externa;
+- cenário pós-apocalíptico rústico.
+
+=====================================================
+RECOMENDAÇÃO TÉCNICA
+=====================================================
+
+1. Recortar cada objeto individualmente.
+2. Não usar uma grade única rígida para o atlas inteiro.
+3. Tratar como sprites independentes:
+   - árvores;
+   - telhados;
+   - plataformas;
+   - portais;
+   - cercas grandes.
+4. Usar pivô/origem na base dos objetos altos.
+5. Para colisão:
+   - árvores: apenas tronco/base;
+   - portais: laterais, deixando o centro livre;
+   - cercas: colisão linear;
+   - passarelas: colisão na superfície útil;
+   - decoração: normalmente sem colisão.
+6. Para top-down/isométrico:
+   - ordenar pelo Y da base visual.

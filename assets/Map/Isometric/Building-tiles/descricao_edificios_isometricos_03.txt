@@ -1,0 +1,162 @@
+DESCRIÇÃO INDIVIDUAL DO TILESET — edificios_isometricos_03.png
+===============================================================
+
+Tamanho da imagem: 1152 × 768 px
+Tipo: atlas de blocos arquitetônicos isométricos
+Tema: edifícios urbanos, residenciais, institucionais e comerciais
+
+VISÃO GERAL
+-----------
+A imagem apresenta mais um conjunto de módulos de edifícios isométricos,
+organizados em várias linhas horizontais. Há prédios de estilo:
+- moderno;
+- residencial;
+- comercial;
+- institucional;
+- popular;
+- degradado.
+
+O fundo turquesa novamente facilita a separação do atlas.
+
+===============================================================
+1. FAIXA SUPERIOR — MODERNOS, ESCUROS E CLAROS
+===============================================================
+
+[01] Bloco claro com muitas janelas pequenas
+- Edifício compacto, aparência administrativa ou escolar.
+
+[02] Fachada azul-acinzentada com janelas iluminadas
+- Dá sensação noturna ou de prédio em uso.
+
+[03] Prédio escuro/industrial com janelas estreitas
+- Visual de estrutura técnica ou bloco de serviços.
+
+[04] Estrutura preta/escura com grades horizontais
+- Pode ser garagem, edifício empresarial ou prédio moderno.
+
+[05] Bloco rosado/claro com inscrições
+- Aparência institucional ou governamental.
+- Possui texto decorativo na fachada.
+
+A linha reaparece logo abaixo.
+
+===============================================================
+2. FAIXA CENTRAL SUPERIOR — BLOCos RESIDENCIAIS, ESCADAS E COMÉRCIO
+===============================================================
+
+[06] Bloco bege com janelas quadradas
+- Residencial simples, repetitivo.
+
+[07] Bloco branco/claro com marca de escada externa ou parede manchada
+- Visual urbano mais gasto.
+
+[08] Prédio branco com faixa preta contínua
+- Mistura de residencial/comercial.
+- Pode representar lojas no térreo e apartamentos acima.
+
+[09] Bloco amarelo com letreiros/escritas
+- Boa opção para comércio popular ou edifício misto.
+
+Essa faixa está repetida logo abaixo.
+
+===============================================================
+3. FAIXA CENTRAL — BLOCOS BRANCOS, ENVELHECIDOS E JANELAS GRANDES
+===============================================================
+
+[10] Edifício branco simples
+- Muitas janelas pequenas.
+- Bom como prédio genérico residencial ou de escritório.
+
+[11] Bloco bege/marrom envelhecido
+- Fachada mais gasta.
+- Pode representar setor antigo, fábrica ou prédio público desgastado.
+
+[12] Edifício branco mais alto com muitas janelas
+- Variação residencial/administrativa.
+
+[13] Bloco claro com janelas verticais e molduras
+- Visual mais refinado.
+
+[14] Edifício claro grande com muitas janelas em sequência
+- Pode ser hotel, escola, repartição ou hospital.
+
+A linha reaparece repetida logo abaixo.
+
+===============================================================
+4. FAIXA INFERIOR — PRÉDIOS POPULARES E CLÁSSICOS
+===============================================================
+
+[15] Bloco bege com portas de garagem escuras
+- Região inferior esquerda.
+- Pode servir como oficina, prédio de serviço ou térreo misto.
+
+[16] Prédio bege com esquina comercial simples
+- Complemento do módulo anterior.
+
+[17] Bloco vermelho/tijolo liso
+- Muito útil para variedade de bairro urbano.
+
+[18] Fachada cinza-clara envelhecida
+- Aparência antiga, residencial ou institucional.
+
+[19] Edifício branco com arcos altos escuros
+- Visual elegante/histórico.
+- Pode representar galeria, prédio público ou centro antigo.
+
+A última linha repete os mesmos módulos.
+
+===============================================================
+RESUMO POR CATEGORIA
+===============================================================
+
+MODERNOS / TÉCNICOS
+- edifícios escuros;
+- painéis horizontais;
+- fachadas com aparência corporativa.
+
+RESIDENCIAIS
+- blocos bege e brancos;
+- janelas pequenas repetidas;
+- módulos populares.
+
+COMERCIAIS
+- prédios com faixas pretas no térreo;
+- fachadas amarelas com escrita;
+- térreos com portas/garagens.
+
+INSTITUCIONAIS / HISTÓRICOS
+- blocos claros com aparência oficial;
+- edifícios com arcos;
+- fachadas com inscrições.
+
+DEGRADADOS / ANTIGOS
+- paredes manchadas;
+- concreto envelhecido;
+- aparência urbana gasta.
+
+===============================================================
+USO SUGERIDO
+===============================================================
+
+Ideal para:
+- centros urbanos isométricos;
+- bairros residenciais;
+- zonas mistas;
+- ruas comerciais;
+- ambientes históricos;
+- cidades de RPG, RTS, simuladores e jogos de gestão.
+
+===============================================================
+RECOMENDAÇÃO TÉCNICA
+===============================================================
+
+1. Recortar cada prédio como módulo independente.
+2. Aproveitar as linhas duplicadas apenas se quiser redundância.
+3. Categorizar por uso:
+   - residencial;
+   - comercial;
+   - institucional;
+   - histórico;
+   - moderno.
+4. Usar pivô/base inferior do sprite.
+5. Combinar com os outros dois atlases para aumentar variedade urbana.

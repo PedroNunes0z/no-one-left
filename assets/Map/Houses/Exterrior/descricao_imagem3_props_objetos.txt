@@ -1,0 +1,149 @@
+DESCRIÇÃO INDIVIDUAL — IMAGEM 3
+=================================
+
+Arquivo: props_chao_e_objetos.png
+Tamanho da imagem: 640 × 128 px
+Tipo: atlas de props, chão e objetos auxiliares
+
+VISÃO GERAL
+-----------
+A imagem contém elementos complementares para ambientação de mapa medieval/
+rústico. Há pisos, entulho, caixas, barris, sacos, poço, escadas e outros
+props menores.
+
+ORGANIZAÇÃO POR ÁREAS
+---------------------
+
+1. FAIXA SUPERIOR ESQUERDA
+--------------------------
+[01] Grande mancha de piso de pedras arredondadas
+- Canto superior esquerdo.
+- Piso circular/irregular de pedras.
+- Útil para praça, pátio ou base de construção.
+
+[02] Grande mancha de terra marrom
+- Região superior central-esquerda.
+- Solo batido/terra compactada.
+- Pode servir como trilha, chão gasto ou área sem grama.
+
+[03] Ramos/vegetação fina espalhada
+- Canto superior direito da área de chão.
+- Pequenos detalhes orgânicos decorativos.
+
+2. FAIXA SUPERIOR CENTRAL
+-------------------------
+[04] Pequenos blocos de tijolo/pedra vermelha quebrada
+- Várias pilhas pequenas.
+- Funcionam como entulho ou material de construção.
+
+[05] Barril de madeira
+- Próximo ao centro superior.
+
+[06] Caixote de madeira
+- Ao lado do barril.
+
+[07] Suporte/peça vertical pequena
+- Objeto estreito escuro ao lado do caixote.
+
+[08] Poço central
+- Objeto mais importante da imagem.
+- Poço de pedra com estrutura superior de madeira.
+- Pode ser usado como ponto central de vila, pátio ou praça.
+
+[09] Dois caixotes reforçados
+- Ao lado do poço.
+
+[10] Barril adicional
+- Próximo aos caixotes.
+
+[11] Fardos/caixas cobertos por tecido
+- Blocos claros com cobertura bege.
+
+[12] Escada vertical
+- Região superior direita.
+- Excelente para cenários, interiores, sótãos ou telhados.
+
+3. FAIXA INFERIOR ESQUERDA
+--------------------------
+[13] Vigas/estacas em “V”
+- Canto inferior esquerdo.
+- Podem ser suportes, madeira quebrada ou peça de barricada.
+
+[14] Peças pequenas de pedra/tijolo
+- Pequenos fragmentos espalhados.
+
+4. FAIXA INFERIOR CENTRAL
+-------------------------
+[15] Grande grupo de entulho vermelho/marrom
+- Amontoado de pedras/tijolos quebrados.
+
+[16] Fardo/caixa clara
+- Próximo ao entulho.
+
+[17] Dois sacos pequenos claros
+- Logo ao lado.
+
+[18] Tronco/toco circular
+- Pequena peça redonda de madeira.
+
+[19] Tora/tronco horizontal
+- Segmento de madeira deitado.
+
+[20] Duas vigas compridas verticais
+- Peças de madeira longas, alinhadas lado a lado.
+
+5. FAIXA INFERIOR DIREITA
+-------------------------
+[21] Novo conjunto de fardos/caixas cobertas
+- Próximo a barril lateral.
+
+[22] Barril com saco/volume ao lado
+- Grupo de armazenamento.
+
+[23] Pequeno cubo/caixote
+- Objeto pequeno isolado.
+
+[24] Pilha de pequenos caixotes
+- Conjunto cúbico empilhado.
+
+[25] Grande grupo de caixas, barris e sacos
+- Região direita média.
+- Excelente para depósito, mercado ou beco.
+
+[26] Dois sacos grandes
+- Próximo ao grupo de caixas.
+
+[27] Pequena caixa/caixote final
+- Canto inferior direito.
+
+MAPA RESUMIDO
+-------------
+Superior esquerdo:
+- pisos de pedra e terra.
+
+Superior centro:
+- entulho leve, barril, caixote, peças pequenas e poço.
+
+Superior direito:
+- caixas, fardos, barris e escada.
+
+Inferior esquerdo:
+- vigas em “V” e fragmentos pequenos.
+
+Inferior centro:
+- amontoado de entulho, sacos, troncos e vigas.
+
+Inferior direito:
+- armazenamento variado com caixas, barris, sacos e pequenos blocos.
+
+USO SUGERIDO
+------------
+- Decoração de vilas e mercados.
+- Áreas de construção, oficinas e depósitos.
+- Praças e arredores de casas.
+- Interiores/exteriores medievais.
+
+OBSERVAÇÃO TÉCNICA
+------------------
+Esses sprites funcionam melhor como props individuais, colocados manualmente
+na cena para dar variedade e riqueza visual.

@@ -1,0 +1,24 @@
+{
+  "name": "no-one-left",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "assets": "node scripts/prepare-assets.mjs",
+    "check": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "world": "node --experimental-strip-types scripts/expand-world.mjs",
+    "roads": "node scripts/prepare-roads.mjs"
+  },
+  "dependencies": {
+    "phaser": "^3.90.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.7"
+  }
+}

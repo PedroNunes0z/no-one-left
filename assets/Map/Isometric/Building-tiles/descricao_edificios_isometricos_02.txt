@@ -1,0 +1,183 @@
+DESCRIÇÃO INDIVIDUAL DO TILESET — edificios_isometricos_02.png
+===============================================================
+
+Tamanho da imagem: 1152 × 768 px
+Tipo: atlas de edifícios isométricos / cantos urbanos
+Tema: fachadas urbanas variadas, lojas, blocos residenciais e comerciais
+
+VISÃO GERAL
+-----------
+A imagem contém diversos módulos de canto de edifícios em perspectiva
+isométrica. Os sprites apresentam estilos muito variados, indo de
+fachadas simples de tijolo até lojas, prédios residenciais, blocos
+brancos, estruturas comerciais e paredes ornamentadas.
+
+Assim como no primeiro atlas, muitas peças aparecem em linhas repetidas.
+
+===============================================================
+1. FAIXA SUPERIOR — TIJOLO, CONCRETO E FACHADAS CLARAS
+===============================================================
+
+[01] Bloco de tijolo marrom simples
+- Prédio discreto com janelas pequenas.
+- Pode ser residencial simples ou armazém urbano.
+
+[02] Edifício cinza-claro desgastado
+- Fachada envelhecida, com manchas e vegetação na base.
+- Ideal para cenários decadentes ou bairros antigos.
+
+[03] Loja/esquina com cobertura clara
+- Térreo comercial com aparência de vitrine.
+- Pode ser cafeteria, comércio ou loja de rua.
+
+[04] Bloco branco liso
+- Paredes claras e janelas pequenas.
+- Visual limpo e simples.
+
+[05] Torre/bloco envidraçado claro
+- Muitos painéis/janelas em grade.
+- Aparência de escritório ou prédio moderno.
+
+A linha aparece repetida logo abaixo.
+
+===============================================================
+2. FAIXA CENTRAL SUPERIOR — LOJAS, CARTAZES E BLOCOS MISTOS
+===============================================================
+
+[06] Tijolo rosa-claro simples
+- Variante mais limpa e uniforme.
+- Boa para preencher bairros residenciais.
+
+[07] Fachada de loja com letreiro amarelo/preto
+- Parece uma esquina comercial.
+- Boa para padarias, mercados ou lojas urbanas.
+
+[08] Bloco com posters/cartazes na fachada
+- Visual comercial e mais caótico.
+- Excelente para rua movimentada ou área central.
+
+[09] Edifício marrom escuro com janelas
+- Mistura de residencial e comercial.
+
+[10] Estrutura bege desgastada com portões
+- Visual de garagem, galpão ou depósito.
+
+[11] Fachada clara de esquina com cobertura
+- Comércio ou prédio de uso misto.
+
+[12] Painel/fachada branca com textura vertical
+- Pode servir como parede lateral ou prédio simples.
+
+[13] Fachada ornamental cinza
+- Visual mais clássico, com detalhes arquitetônicos.
+- Boa para bancos, museus ou prédio institucional.
+
+A faixa reaparece repetida na linha seguinte.
+
+===============================================================
+3. FAIXA CENTRAL — FACHADAS COLORIDAS, BLOCOS RESIDENCIAIS E GARAGENS
+===============================================================
+
+[14] Prédio baixo com janelas coloridas e molduras escuras
+- Aparência estilizada e urbana.
+- Pode servir como hotel, prédio retrô ou comércio adaptado.
+
+[15] Bloco cinza com muitas janelas
+- Visual residencial ou administrativo.
+
+[16] Bloco azul-claro/cinza claro
+- Fachada simples, uso residencial ou escolar.
+
+[17] Módulo de janelas verticais repetidas
+- Complemento para bloco maior.
+
+[18] Edifício bege desgastado com portão escuro
+- Pode representar oficina, garagem ou setor de serviço.
+
+[19] Prédio claro com grandes aberturas escuras
+- Aparência de garagem, estacionamento ou mercado.
+
+[20] Fachada clássica de pedra clara
+- Ornamentada, ideal para região histórica.
+
+Essa faixa também está duplicada abaixo.
+
+===============================================================
+4. FAIXA INFERIOR — VIDRO, PEDRA, TIJOLO E MODERNIDADE
+===============================================================
+
+[21] Módulo escuro com grandes painéis de vidro
+- Região inferior esquerda.
+- Aparência moderna/corporativa.
+
+[22] Bloco preto/escuro com muitas janelas
+- Pode ser escritório, prédio empresarial ou centro comercial.
+
+[23] Estrutura cinza envelhecida
+- Pedra/concreto gasto, bom para cidade antiga.
+
+[24] Fachada desgastada com escrita/sinalização
+- Visual de comércio antigo ou zona industrial.
+
+[25] Bloco de tijolo com grandes janelas
+- Uso misto: comercial ou industrial.
+
+[26] Edifício amarelo/esverdeado com grade de janelas
+- Aparência moderna colorida.
+
+[27] Bloco claro com muitas janelas pequenas
+- Pode funcionar como escritório modular.
+
+A última linha repete os mesmos módulos.
+
+===============================================================
+RESUMO POR CATEGORIA
+===============================================================
+
+RESIDENCIAL
+- tijolo simples;
+- blocos cinza/azulados;
+- fachadas discretas com janelas pequenas.
+
+COMERCIAL
+- lojas com letreiros;
+- esquinas com vitrines;
+- fachadas com posters/cartazes.
+
+INDUSTRIAL / SERVIÇO
+- prédios com portões;
+- estruturas desgastadas;
+- garagens e depósitos.
+
+HISTÓRICO / CLÁSSICO
+- paredes ornamentadas;
+- pedra clara;
+- fachadas institucionais.
+
+MODERNO
+- vidro escuro;
+- torres claras com painéis;
+- blocos regulares de escritório.
+
+===============================================================
+USO SUGERIDO
+===============================================================
+
+Ideal para:
+- mapas urbanos isométricos;
+- centros comerciais;
+- bairros antigos;
+- ruas de lojas;
+- quarteirões mistos;
+- ambientes industriais;
+- cidades densas em jogos de estratégia, simulação e RPG.
+
+===============================================================
+RECOMENDAÇÃO TÉCNICA
+===============================================================
+
+1. Separar cada módulo de esquina em sprite individual.
+2. Identificar duplicatas para reduzir atlas final se desejar.
+3. Manter categorias por estilo visual.
+4. Usar base do prédio como referência de pivô.
+5. Excelente para combinar com outros atlases de edifícios urbanos.

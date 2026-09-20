@@ -1,0 +1,99 @@
+DESCRIÇÃO INDIVIDUAL — IMAGEM 1
+=================================
+
+Arquivo: variacoes_casas_montadas.png
+Tamanho da imagem: 1824 × 320 px
+Tipo: atlas com construções já montadas / variações de fachada
+
+VISÃO GERAL
+-----------
+A imagem contém várias versões montadas de uma mesma família de construções
+medievais/rústicas em pixel art. As casas usam:
+- telhado alto marrom;
+- base de tijolo vermelho escuro;
+- partes de madeira;
+- toldos/tecidos verdes;
+- barris, caixas, sacos e outros props laterais.
+
+As construções estão alinhadas horizontalmente, com pequenas separações
+entre cada versão.
+
+ORGANIZAÇÃO POR POSIÇÃO (DA ESQUERDA PARA A DIREITA)
+----------------------------------------------------
+
+[01] Casa/loja com toldo frontal e área de barris
+- Primeira construção à esquerda.
+- Fachada com telhado alto.
+- Toldo frontal verde claro.
+- Barris e pequenos objetos na base.
+- Aparência de comércio ou estalagem pequena.
+
+[02] Casa estreita com porta central
+- Segunda construção.
+- Estrutura mais simples.
+- Tijolos aparentes na parte inferior.
+- Janela frontal e porta no centro.
+- Pequeno volume de vegetação/pedras na base.
+
+[03] Casa com parede lateral aparente
+- Terceira construção.
+- Lado esquerdo mostra uma parede externa clara.
+- Toldo frontal pequeno.
+- Porta deslocada para a direita.
+- Barril e vegetação/entulho na base.
+
+[04] Casa de tijolo com grande portão/porta de madeira
+- Quarta construção.
+- Base frontal mais larga.
+- Grande portão de madeira na frente.
+- Pequenos props laterais (caixas, barris, objetos no chão).
+
+[05] Construção grande dupla / edifício expandido
+- Quinta construção, a maior da imagem.
+- Estrutura mais larga.
+- Duas águas de telhado laterais.
+- Toldo verde no centro-esquerda.
+- Porta frontal central inferior.
+- Área de pedras/calçamento e vegetação no chão.
+- Parece uma loja/oficina/mercado maior ou prédio central.
+
+[06] Casa estreita com sacos laterais
+- Sexta construção.
+- Similar à segunda, porém com mais props laterais.
+- Porta central.
+- Sacos e recipientes próximos à lateral esquerda.
+
+[07] Casa estreita com anexo lateral direito
+- Sétima construção.
+- Base semelhante às casas menores.
+- Área lateral direita aberta/parcialmente visível.
+- Pode representar oficina, depósito ou varanda lateral.
+
+[08] Estrutura lateral aberta / galpão parcial
+- Oitava e última estrutura à direita.
+- Não parece uma casa frontal completa.
+- Mostra mais fortemente a lateral e o interior.
+- Possui caixas, barris, prateleiras e objetos armazenados.
+- Funciona como anexo, galpão, depósito ou vista lateral de construção.
+
+CARACTERÍSTICAS RECORRENTES
+---------------------------
+- Telhados altos e inclinados em madeira marrom.
+- Chaminés em algumas variantes.
+- Base de tijolo vermelho escuro.
+- Painéis de madeira escura.
+- Toldo de tecido verde desgastado.
+- Props decorativos: barris, caixas, sacos, madeira, pedras e vegetação.
+
+USO SUGERIDO
+------------
+- Casas prontas para mapas.
+- Fachadas de vila medieval/rústica.
+- Lojas, tavernas, oficinas, depósitos.
+- Variações para quebrar repetição visual em mapa top-down/isométrico.
+
+OBSERVAÇÃO TÉCNICA
+------------------
+Como as construções já estão montadas e variam de largura, o ideal é usar
+cada prédio como sprite/objeto independente, e não tentar dividir tudo em
+tiles fixos de mesmo tamanho.

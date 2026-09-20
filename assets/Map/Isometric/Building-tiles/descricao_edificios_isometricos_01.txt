@@ -1,0 +1,172 @@
+DESCRIÇÃO INDIVIDUAL DO TILESET — edificios_isometricos_01.png
+===============================================================
+
+Tamanho da imagem: 1152 × 768 px
+Tipo: atlas de fachadas/cantos de edifícios isométricos
+Tema: cidade urbana, prédios, comércio e blocos arquitetônicos
+
+VISÃO GERAL
+-----------
+A imagem reúne módulos de edifícios em perspectiva isométrica,
+principalmente cantos externos de construções urbanas.
+Os sprites estão organizados em faixas horizontais repetidas, com
+variações de materiais, janelas, cores e estilos de fachada.
+
+O fundo ciano/turquesa indica transparência ou cor de recorte para atlas.
+
+ESTRUTURA GERAL
+---------------
+As peças aparecem em linhas duplicadas, ou seja, muitas construções se
+repetem logo abaixo para facilitar uso/cópia no tileset.
+
+As construções são apresentadas em módulos de canto:
+- face esquerda;
+- face direita;
+- encontro em “V” isométrico;
+- alturas variáveis;
+- estilos variados.
+
+===============================================================
+1. FAIXA SUPERIOR — EDIFÍCIOS CLÁSSICOS E COMERCIAIS ESCUROS
+===============================================================
+
+[01] Fachada clássica cinza-azulada com arcos no topo
+- Prédio longo com janelas repetidas.
+- Visual histórico/institucional.
+- Pode servir como prefeitura, escola, estação ou prédio antigo.
+
+[02] Edifício branco/cinza com muitas janelas retangulares
+- Aparência mais moderna e regular.
+- Ideal para escritórios ou prédio comercial médio.
+
+[03] Construção marrom-avermelhada escura
+- Fachada mais pesada e sombria.
+- Pode representar prédio antigo degradado, armazém ou bloco industrial.
+
+Essas três variações aparecem repetidas na linha logo abaixo.
+
+===============================================================
+2. FAIXA CENTRAL SUPERIOR — FACHADAS CLARAS, ARCOS E TIJOLO
+===============================================================
+
+[04] Prédio claro com arcos altos escuros
+- Forte contraste entre paredes claras e aberturas pretas.
+- Boa opção para galeria, comércio ou edifício histórico.
+
+[05] Fachada branca com vitrines/entradas modernas
+- Elementos frontais com áreas pretas e pequenos detalhes amarelos.
+- Pode representar loja, mercado, comércio de rua.
+
+[06] Bloco cinza com janelas pequenas e repetidas
+- Aparência institucional ou residencial simples.
+
+[07] Bloco de arcos repetidos em cinza claro
+- Sequência de portas/janelas arqueadas.
+- Pode servir como corredor urbano, depósito ou galeria.
+
+[08] Construção em tijolo vermelho escuro
+- Aparência de armazém ou prédio antigo de tijolo aparente.
+
+Essas variações também aparecem repetidas na linha seguinte.
+
+===============================================================
+3. FAIXA CENTRAL — BLOCOS MISTOS, FACHADAS COLORIDAS E VIDRO
+===============================================================
+
+[09] Prédio misto em tijolo marrom com base clara
+- Janelas escuras no pavimento superior.
+- Térreo com portas/aberturas brancas.
+
+[10] Fachadas comerciais coloridas
+- Sequência de módulos rosa, verde, azul e amarelo.
+- Excelente para lojas, comércio de bairro ou rua movimentada.
+
+[11] Edifício envidraçado azul
+- Aparência mais moderna.
+- Pode ser escritório, prédio público ou centro comercial.
+
+[12] Edifício cinza com faixas horizontais regulares
+- Visual limpo e repetitivo.
+- Ideal para bloco administrativo ou comercial.
+
+Toda a faixa reaparece duplicada logo abaixo.
+
+===============================================================
+4. FAIXA INFERIOR — PRÉDIOS DIVERSOS, TIJOLO E JANELAS MODERNAS
+===============================================================
+
+[13] Fachada escura com grandes vitrines/janelas
+- Região inferior esquerda.
+- Pode servir para lojas fechadas, galpões urbanos ou vitrines amplas.
+
+[14] Prédio bege/areia com muitas janelas pequenas
+- Aparência residencial ou administrativa.
+
+[15] Bloco rosa-claro
+- Fachada simples, com repetição de janelas.
+- Boa opção para diversidade de mapa urbano.
+
+[16] Prédio de tijolo escuro com janelas industriais
+- Visual mais áspero/industrial.
+- Pode representar fábrica, oficina ou loft urbano.
+
+[17] Bloco moderno azul-acinzentado com muitos painéis/janelas
+- Visual corporativo ou tecnológico.
+
+Esses módulos aparecem novamente na última linha.
+
+===============================================================
+RESUMO POR CATEGORIA
+===============================================================
+
+HISTÓRICOS/CLÁSSICOS
+- edifícios com arcos;
+- fachadas claras ornamentadas;
+- blocos cinza-azulados.
+
+COMERCIAIS
+- lojas com vitrines;
+- fachadas coloridas;
+- térreos com portas e entradas visíveis.
+
+RESIDENCIAIS / ESCRITÓRIOS
+- prédios com muitas janelas regulares;
+- blocos bege, cinza e rosa.
+
+INDUSTRIAIS / SOMBRIOS
+- tijolo escuro;
+- fachadas pesadas;
+- galpões urbanos.
+
+MODERNOS
+- edifícios com vidro azul;
+- blocos com janelas uniformes e linhas retas.
+
+===============================================================
+USO SUGERIDO
+===============================================================
+
+Ideal para:
+- mapas urbanos isométricos;
+- ruas de cidade;
+- bairros comerciais;
+- centros históricos;
+- regiões industriais;
+- distritos residenciais;
+- cenários de RPG, estratégia ou simuladores.
+
+===============================================================
+RECOMENDAÇÃO TÉCNICA
+===============================================================
+
+1. Tratar cada canto de prédio como sprite/módulo independente.
+2. Como há repetição em linhas, você pode selecionar apenas uma versão
+   quando o duplicado não for necessário.
+3. Organizar por categorias:
+   - histórico;
+   - comercial;
+   - moderno;
+   - industrial;
+   - residencial.
+4. Usar pivô na base do edifício.
+5. Ideal para montagem modular de quarteirões isométricos.

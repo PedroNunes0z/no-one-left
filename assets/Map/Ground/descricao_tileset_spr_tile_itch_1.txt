@@ -1,0 +1,373 @@
+DESCRIÇÃO DO TILESET — spr_tile_itch(1).png
+================================================
+
+Tamanho total da imagem: 512 × 352 px
+Origem das coordenadas: canto superior esquerdo.
+Eixo X: cresce para a direita.
+Eixo Y: cresce para baixo.
+
+GRADE DE REFERÊNCIA
+-------------------
+A imagem pode ser lida sobre uma grade de referência de 16 × 16 px:
+
+- 32 colunas: C00 até C31
+- 22 linhas: R00 até R21
+
+IMPORTANTE:
+Este atlas NÃO é formado apenas por tiles independentes de 16 × 16.
+Há móveis e objetos grandes que atravessam várias células.
+As coordenadas abaixo indicam a região aproximada ocupada por cada sprite.
+
+Formato:
+ID | objeto | posição em pixels | células aproximadas da grade 16×16
+
+
+================================================
+A) ESTRUTURAS E PORTAS — LADO ESQUERDO
+================================================
+
+A01 | Estrutura grande de madeira / estante / divisória
+Pixels: X=48..127, Y=0..177
+Grade: C03..C07, R00..R11
+Observação: objeto grande formado por molduras, prateleiras e dois pés.
+
+A02 | Porta de madeira — variante 1
+Pixels: X=141..162, Y=3..32
+Grade: C08..C10, R00..R02
+
+A03 | Porta de madeira — variante 2
+Pixels: X=189..210, Y=3..32
+Grade: C11..C13, R00..R02
+
+A04 | Porta/painel verde escuro
+Pixels: X=237..258, Y=3..32
+Grade: C14..C16, R00..R02
+
+A05 | Porta de madeira — variante 3
+Pixels: X=141..162, Y=51..80
+Grade: C08..C10, R03..R05
+
+A06 | Porta de madeira danificada / bloqueada por tábuas
+Pixels: X=189..210, Y=51..80
+Grade: C11..C13, R03..R05
+
+A07 | Porta de madeira escura — variante 4
+Pixels: X=238..257, Y=52..80
+Grade: C14..C16, R03..R05
+
+A08 | Porta de madeira com fita de perigo
+Pixels: X=237..258, Y=99..128
+Grade: C14..C16, R06..R08
+Detalhe: fitas amarelas e pretas atravessando a porta.
+
+A09 | Pequena moldura/caixote de madeira
+Pixels: X=12..35, Y=141..165
+Grade: C00..C02, R08..R10
+
+
+================================================
+B) LUMINÁRIAS, JANELAS E PERSIANAS
+================================================
+
+B01 | Luminária horizontal clara
+Pixels: X=285..306, Y=6..12
+Grade: C17..C19, R00
+
+B02 | Luminária horizontal / faixa de luz — variante 2
+Pixels: X=282..309, Y=19..28
+Grade: C17..C19, R01
+
+B03 | Janela dupla azul/cinza
+Pixels: X=280..310, Y=33..63
+Grade: C17..C19, R02..R03
+
+B04 | Persiana/porta metálica verde escura
+Pixels: X=280..311, Y=67..97
+Grade: C17..C19, R04..R06
+
+B05 | Persiana/porta metálica azul-cinza
+Pixels: X=280..311, Y=115..145
+Grade: C17..C19, R07..R09
+
+
+================================================
+C) PLANTAS E PEQUENOS OBJETOS DECORATIVOS
+================================================
+
+C01 | Pequena planta/flor roxa em vaso
+Pixels: X=324..332, Y=10..22
+Grade: C20, R00..R01
+
+C02 | Pequena planta/flor vermelha em vaso
+Pixels: aprox. X=324..329, Y=42..54
+Grade: C20, R02..R03
+
+C03 | Pequena planta/flor branca em vaso
+Pixels: X=324..332, Y=71..83
+Grade: C20, R04..R05
+
+
+================================================
+D) MÓVEIS, EQUIPAMENTOS E PROPS — CANTO SUPERIOR DIREITO
+================================================
+
+D01 | Sofá/baú/assento verde baixo
+Pixels: X=356..380, Y=5..27
+Grade: C22..C23, R00..R01
+
+D02 | Armário/equipamento verde vertical
+Pixels: X=384..401, Y=0..27
+Grade: C24..C25, R00..R01
+
+D03 | Máquina/armário com cobertura verde e conteúdo colorido
+Pixels: aprox. X=416..439, Y=6..43
+Grade: C26..C27, R00..R02
+Uso sugerido: vending machine, expositor, armário de ferramentas ou terminal.
+
+D04 | Indicador/painel vertical vermelho
+Pixels: aprox. X=438..446, Y=21..42
+Grade: C27, R01..R02
+
+D05 | Armário/caixa de parede marrom — esquerda
+Pixels: aprox. X=448..463, Y=11..29
+Grade: C28, R00..R01
+
+D06 | Armário/caixa de parede marrom — direita
+Pixels: aprox. X=464..479, Y=11..29
+Grade: C29, R00..R01
+
+D07 | Lixeira/recipiente cinza — variante 1
+Pixels: X=481..494, Y=10..29
+Grade: C30, R00..R01
+
+D08 | Lixeira/recipiente cinza — variante 2
+Pixels: X=498..509, Y=13..29
+Grade: C31, R00..R01
+
+D09 | Pequena grade/ventilação horizontal
+Pixels: aprox. X=448..458, Y=41..47
+Grade: C28, R02
+
+D10 | Bicicleta clara
+Pixels: X=482..508, Y=35..52
+Grade: C30..C31, R02..R03
+
+D11 | Equipamento elétrico/industrial bege
+Pixels: X=349..379, Y=36..79
+Grade: C21..C23, R02..R04
+Detalhes visuais: tomadas/controles e grade de ventilação.
+
+D12 | Máquina/terminal amarelo-oliva
+Pixels: X=416..446, Y=54..93
+Grade: C26..C27, R03..R05
+Uso sugerido: terminal, fliperama, vending machine, ATM ou equipamento industrial.
+
+
+================================================
+E) PEQUENOS MÓVEIS / CAIXAS / GRADES
+================================================
+
+E01 | Caixa/mesa baixa retangular escura
+Pixels: X=165..185, Y=101..114
+Grade: C10..C11, R06..R07
+
+E02 | Prateleira/caixa estreita horizontal
+Pixels: X=198..217, Y=100..109
+Grade: C12..C13, R06
+
+E03 | Caixa pequena / nicho quadrado
+Pixels: X=201..215, Y=117..129
+Grade: C12..C13, R07..R08
+
+E04 | Grade/radiador horizontal
+Pixels: X=165..186, Y=133..146
+Grade: C10..C11, R08..R09
+
+E05 | Caixa/grade marrom
+Pixels: X=197..217, Y=149..162
+Grade: C12..C13, R09..R10
+
+E06 | Pequeno recipiente/caixa
+Pixels: X=235..244, Y=149..156
+Grade: C14..C15, R09
+
+E07 | Gaveta/caixa comprida
+Pixels: X=166..186, Y=162..175
+Grade: C10..C11, R10
+
+
+================================================
+F) CAMAS
+================================================
+
+F01 | Cama clara — esquerda
+Pixels aproximados: X=336..399, Y=96..207
+Grade aproximada: C21..C24, R06..R12
+Detalhe: colchão claro com faixa verde/cinza na região central/inferior.
+
+F02 | Cama clara — centro
+Pixels aproximados: X=400..463, Y=96..207
+Grade aproximada: C25..C28, R06..R12
+Detalhe: mesma família visual da cama esquerda.
+
+F03 | Cama cinza — direita
+Pixels aproximados: X=464..511, Y=96..207
+Grade aproximada: C29..C31, R06..R12
+Detalhe: colchão/cobertura predominantemente cinza.
+
+Observação:
+As camas são sprites grandes e NÃO devem ser recortadas em tiles individuais de 16×16.
+
+
+================================================
+G) TERRENO, PAREDES E PISOS
+================================================
+
+G01 | Mancha quadrada de grama
+Pixels: X=10..68, Y=203..244
+Grade: C00..C04, R12..R15
+Uso: vegetação/grama sobreposta ao chão.
+
+G02 | Tile de terra/grama muito escura
+Pixels aproximados: X=80..111, Y=208..239
+Grade: C05..C06, R13..R14
+
+G03 | Faixa de parede de tijolos com musgo/verde
+Pixels aproximados: X=128..191, Y=208..239
+Grade: C08..C11, R13..R14
+
+G04 | Segmentos de parede/tijolos cinza
+Pixels aproximados: X=128..223, Y=208..239
+Grade aproximada: C08..C13, R13..R14
+Observação: há variações de tijolo dentro dessa região.
+
+G05 | Conjunto de piso/moldura cinza — peça em L
+Pixels aproximados: X=80..111, Y=240..287
+Grade: C05..C06, R15..R17
+
+G06 | Conjunto de piso/moldura cinza — quadrado grande
+Pixels aproximados: X=128..175, Y=240..287
+Grade: C08..C10, R15..R17
+
+G07 | Conjunto de piso/moldura cinza — quadrado pequeno
+Pixels aproximados: X=188..211, Y=252..275
+Grade: C11..C13, R15..R17
+
+G08 | Piso quadrado escuro verde/preto
+Pixels aproximados: X=368..415, Y=208..255
+Grade: C23..C25, R13..R15
+
+G09 | Piso quadrado escuro marrom/preto
+Pixels aproximados: X=416..463, Y=208..255
+Grade: C26..C28, R13..R15
+
+G10 | Piso quadrado escuro azul/cinza
+Pixels aproximados: X=464..511, Y=208..255
+Grade: C29..C31, R13..R15
+
+
+================================================
+H) ILUMINAÇÃO EXTERNA
+================================================
+
+H01 | Poste de luz
+Pixels: X=322..333, Y=224..267
+Grade: C20, R14..R16
+Detalhe: globo/lâmpada branca sobre haste escura.
+
+
+================================================
+I) CERCAS E PORTÕES
+================================================
+
+I01 | Painel/portão de tela metálica
+Pixels: X=301..370, Y=276..351
+Grade: C18..C23, R17..R21
+Detalhe: duas faixas de alambrado/tela metálica e moldura escura.
+
+I02 | Cerca/grade quadrada de madeira
+Pixels: X=396..467, Y=279..350
+Grade: C24..C29, R17..R21
+Detalhe: ripas verticais marrons formando uma área cercada.
+
+
+================================================
+J) PAREDES INFERIORES
+================================================
+
+J01 | Parede de tijolos verde-escura — seção esquerda
+Pixels: X=144..191, Y=307..351
+Grade: C09..C11, R19..R21
+Formato: canto/abertura de parede.
+
+J02 | Parede de tijolos verde-escura — seção direita
+Pixels: X=206..257, Y=307..351
+Grade: C12..C16, R19..R21
+Formato: canto/abertura de parede.
+
+
+================================================
+MAPA RESUMIDO POR ÁREA
+================================================
+
+C00..C07 / R00..R11
+- grande estrutura de madeira;
+- pequena moldura/caixa.
+
+C08..C16 / R00..R11
+- portas;
+- porta bloqueada;
+- porta com fita de perigo;
+- pequenos móveis/caixas/grades.
+
+C17..C20 / R00..R09
+- luminárias;
+- janela;
+- persianas;
+- vasos com flores.
+
+C21..C31 / R00..R05
+- sofá/baú verde;
+- armário verde;
+- equipamento industrial;
+- vending/terminal;
+- armários marrons;
+- lixeiras;
+- bicicleta.
+
+C21..C31 / R06..R15
+- três camas;
+- três tiles de piso escuro.
+
+C00..C13 / R12..R17
+- grama;
+- terra;
+- paredes de tijolo;
+- pisos/molduras cinza.
+
+C20 / R14..R16
+- poste de luz.
+
+C18..C29 / R17..R21
+- portão de tela metálica;
+- cerca de madeira.
+
+C09..C16 / R19..R21
+- paredes de tijolos verde-escuras.
+
+
+================================================
+SUGESTÃO DE USO EM ENGINE
+================================================
+
+1. Use 16×16 apenas como grade de referência.
+2. Portas e objetos pequenos podem ser cadastrados como regions individuais.
+3. Camas, cercas e a grande estrutura de madeira devem ser sprites independentes.
+4. Preserve o canal alpha/transparência.
+5. Para colisão:
+   - portas: colisão retangular pequena;
+   - camas: colisão apenas na base/área física;
+   - poste: colisão apenas na base;
+   - cerca/portão: colisão acompanhando a moldura;
+   - paredes: colisão sólida.
+6. Em jogos top-down, use o ponto inferior do sprite como origem de ordenação no eixo Y.

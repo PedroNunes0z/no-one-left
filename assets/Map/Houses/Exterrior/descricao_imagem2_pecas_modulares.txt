@@ -1,0 +1,161 @@
+DESCRIÇÃO INDIVIDUAL — IMAGEM 2
+=================================
+
+Arquivo: pecas_modulares_casa.png
+Tamanho da imagem: 832 × 288 px
+Tipo: atlas modular de construção medieval/rústica
+
+VISÃO GERAL
+-----------
+A imagem reúne peças separadas usadas para montar casas, lojas, galpões e
+fachadas. O fundo bege facilita a visualização dos elementos individuais.
+
+Os sprites principais pertencem à mesma linguagem visual:
+- telhas marrons;
+- paredes de tijolo vermelho escuro;
+- madeira escura;
+- toldos/tecidos verdes;
+- portas, janelas, chaminés e props complementares.
+
+ORGANIZAÇÃO POR FAIXAS / POSIÇÕES
+---------------------------------
+
+1. FAIXA SUPERIOR
+-----------------
+[01] Grande peça de telhado triangular / cobertura frontal
+- Canto superior esquerdo.
+- Telhado marrom com frente reta.
+- Pode ser usado como peça superior de prédio largo.
+
+[02] Fachada completa central estreita
+- Região superior central-esquerda.
+- Estrutura já montada com:
+  - telhado alto;
+  - parede superior de madeira;
+  - base de tijolo.
+- Funciona como corpo principal de casa estreita.
+
+[03] Pequenos detritos de madeira / tábuas quebradas
+- Acima do toldo, na área central.
+- Peças decorativas de chão ou acabamento.
+
+[04] Toldo/abrigo de tecido verde
+- Região superior central.
+- Estrutura simples com cobertura de tecido.
+- Pode funcionar como banca, cobertura externa ou extensão de loja.
+
+[05] Duas portas verticais
+- Ao lado do toldo.
+- Portas marrons altas, semelhantes a portas de casa/depósito.
+
+[06] Dois módulos de telhado/galpão cinza-claro
+- Região superior direita.
+- Coberturas grandes vazadas por baixo.
+- Ideais para galpões, anexos ou construções abertas.
+
+2. FAIXA CENTRAL
+----------------
+[07] Painel/parede de madeira
+- Parte inferior esquerda.
+- Peça retangular grande.
+
+[08] Grande peça vertical de tecido verde rasgado
+- Logo à direita do painel de madeira.
+- Pode ser cortina, lona, toldo lateral ou cobertura danificada.
+
+[09] Pequena janela/caixote de parede — variante 1
+- Pequeno módulo isolado perto da peça de tecido.
+
+[10] Pequena janela/caixote de parede — variante 2
+- Segunda variação, logo abaixo.
+
+[11] Faixa de toldo marrom/cinza
+- Parte inferior central-esquerda.
+- Faixa horizontal que serve como cobertura frontal.
+
+[12] Dois pequenos recipientes escuros
+- Centro inferior.
+- Podem ser barris pequenos ou vasos escuros.
+
+[13] Chaminé / coluna decorativa
+- No centro da imagem.
+- Estrutura vertical marrom com topo decorado.
+
+[14] Dois ornamentos/capitéis de madeira
+- Ao lado da chaminé.
+- Peças pequenas para acabamento de telhado ou fachada.
+
+[15] Dois módulos triangulares de telhado frontal
+- Logo à direita dos ornamentos.
+- Servem para fachadas menores.
+
+[16] Portas/janelas pequenas de madeira
+- Diversas peças pequenas retangulares na região central inferior.
+
+[17] Painéis de tijolo vermelho
+- Parte inferior central.
+- Segmentos de parede vermelha para compor fachadas.
+
+[18] Troncos/tábuas quebradas
+- Centro-direita.
+- Props de sujeira, entulho ou chão.
+
+[19] Peça em “X” de madeira
+- Região centro-direita.
+- Pode ser escora, barricada ou elemento decorativo.
+
+[20] Pequenas pontas/triângulos de telhado
+- Próximos à peça em “X”.
+- Acabamentos de cobertura.
+
+3. FAIXA DIREITA INFERIOR
+-------------------------
+[21] Duas portas grandes de madeira com reforço diagonal
+- Parte inferior direita.
+- Excelentes para celeiros, depósitos ou lojas grandes.
+
+[22] Dois pequenos quadrados escuros
+- Canto inferior direito.
+- Pequenos blocos/caixas/fechos/props.
+
+[23] Pequenos blocos escuros sob os galpões
+- Elementos de base/apoio, provavelmente pilares baixos ou recipientes.
+
+[24] Pequenas tábuas quebradas adicionais
+- Próximo aos módulos de telhado cinza.
+
+MAPA RESUMIDO
+-------------
+Topo esquerdo:
+- telhado grande triangular.
+
+Topo centro-esquerda:
+- casa estreita montada.
+
+Topo centro:
+- detritos + toldo verde + portas.
+
+Topo direito:
+- dois galpões/coberturas cinza.
+
+Inferior esquerdo:
+- painéis de madeira + lona/tecido + janelas pequenas.
+
+Inferior centro:
+- faixa de toldo, barris/vasos, chaminé, ornamentos, mini-telhados,
+  janelas e painéis de tijolo.
+
+Inferior direito:
+- portas grandes, quadrados escuros e pequenos props.
+
+USO SUGERIDO
+------------
+- Montagem modular de casas medievais.
+- Criação de lojas, depósitos, galpões e bancas.
+- Variação de fachadas.
+- Sistema de building kit para mapas 2D.
+
+OBSERVAÇÃO TÉCNICA
+------------------
+O melhor uso é por recorte individual de cada peça, montando combinações
+novas dentro da engine ou do editor de mapas.

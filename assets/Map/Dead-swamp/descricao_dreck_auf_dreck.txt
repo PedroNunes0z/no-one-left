@@ -1,0 +1,114 @@
+DESCRIÇÃO INDIVIDUAL DO TILESET — dreck auf dreck.png
+=======================================================
+
+Tamanho da imagem: 96 × 128 px
+Tipo: tile/texture de solo em pixel art
+Tema principal: terra marrom / chão batido
+
+ORIGEM DAS COORDENADAS
+----------------------
+- canto superior esquerdo
+- X cresce para a direita
+- Y cresce para baixo
+
+VISÃO GERAL
+-----------
+A imagem contém uma textura de solo marrom praticamente contínua, com
+variações sutis de luminosidade e granulação.
+
+O tile parece ter sido feito para uso como:
+- terra;
+- lama seca;
+- chão de estrada;
+- solo de floresta;
+- chão de pântano seco;
+- área desgastada sem grama.
+
+=====================================================
+1. REGIÃO SUPERIOR
+=====================================================
+
+[01] Terra marrom escura
+Descrição:
+- textura homogênea;
+- pequenos padrões horizontais e irregulares;
+- baixa variação de contraste;
+- boa para preenchimento contínuo.
+
+=====================================================
+2. REGIÃO CENTRAL
+=====================================================
+
+[02] Área levemente mais clara
+Descrição:
+- mancha grande e suave;
+- transição difusa;
+- parece uma área de terra mais pisada ou iluminada;
+- não possui borda rígida.
+
+Possíveis usos:
+- variação de terreno;
+- chão desgastado;
+- centro de trilha;
+- área de circulação.
+
+=====================================================
+3. REGIÃO INFERIOR
+=====================================================
+
+[03] Retorno gradual ao marrom escuro
+Descrição:
+- textura novamente mais uniforme;
+- detalhes granulares discretos;
+- mantém continuidade visual com o topo.
+
+=====================================================
+CARACTERÍSTICAS VISUAIS
+=====================================================
+
+- tons de marrom médio e escuro;
+- granulação suave;
+- sem elementos sólidos;
+- sem objetos ou vegetação;
+- sem bordas claramente definidas;
+- sem transparência aparente;
+- aparência de textura repetível.
+
+=====================================================
+USO SUGERIDO
+=====================================================
+
+Pode ser usado como:
+- tile de terra base;
+- chão de aldeia;
+- estrada;
+- trilha;
+- chão de floresta;
+- área de pântano seco;
+- terreno de fazenda;
+- base sob construções.
+
+Também funciona bem abaixo de:
+- cercas;
+- cabanas;
+- árvores;
+- pedras;
+- vegetação;
+- props.
+
+=====================================================
+RECOMENDAÇÃO TÉCNICA
+=====================================================
+
+1. Usar como tile de chão.
+2. Pode ser repetido em TileMap.
+3. Se houver repetição visual perceptível:
+   - criar versões espelhadas;
+   - rotacionar quando possível;
+   - gerar 2 a 4 variações.
+4. Pode servir como camada base sob decals de:
+   - lama;
+   - pedras;
+   - folhas;
+   - grama seca.
+5. Não necessita de colisão.

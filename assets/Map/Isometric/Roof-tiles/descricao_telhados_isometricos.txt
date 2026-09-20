@@ -1,0 +1,196 @@
+DESCRIÇÃO CORRIGIDA — TELHADOS / COBERTURAS ISOMÉTRICAS
+========================================================
+
+Arquivo: estruturas_isometricas_terreno.png
+Correção: os elementos desta imagem são melhor interpretados como
+TELHADOS, COBERTURAS ou BLOCOS DE COBERTURA vistos em perspectiva
+isométrica, e não como relevo/terreno.
+
+Tamanho da imagem: 432 × 336 px
+Tipo: atlas de telhados/coberturas isométricas em pixel art
+
+ORIGEM DAS COORDENADAS
+----------------------
+- canto superior esquerdo
+- X cresce para a direita
+- Y cresce para baixo
+
+VISÃO GERAL
+-----------
+A imagem apresenta 11 módulos grandes, organizados em linhas, com
+aparência de coberturas/telhados ou partes superiores de construções.
+
+Eles lembram:
+- telhados de palha;
+- telhados de telha vermelha;
+- coberturas metálicas;
+- telhados de concreto/pedra;
+- domos/cúpulas brancas;
+- cobertura piramidal;
+- base/telhado de templo ou edifício monumental.
+
+Esses sprites podem ser usados como:
+- telhados prontos para edifícios isométricos;
+- coberturas de casas, galpões e construções especiais;
+- variações arquitetônicas para mapas urbanos, medievais ou futuristas.
+
+========================================================
+1. PRIMEIRA LINHA — TELHADOS ALTOS / COBERTURAS ORGÂNICAS
+========================================================
+
+[01] Telhado marrom-claro de palha/madeira
+Posição: linha 1, coluna 1
+Descrição:
+- cobertura baixa e larga;
+- textura irregular em tons amarelados e marrons;
+- lembra telhado de palha, sapê ou madeira envelhecida.
+
+[02] Telhado vermelho escuro / telha cerâmica
+Posição: linha 1, coluna 2
+Descrição:
+- cobertura mais regular;
+- padrão avermelhado escuro;
+- boa leitura como telhado de telhas cerâmicas.
+
+[03] Telhado marrom alto e volumoso
+Posição: linha 1, coluna 3
+Descrição:
+- cobertura mais alta que as anteriores;
+- laterais bem definidas;
+- aparência de telhado grosso, palha compacta ou cobertura rústica reforçada.
+
+========================================================
+2. SEGUNDA LINHA — COBERTURAS PLANAS E BLOCOS DE TELHADO
+========================================================
+
+[04] Telhado/plataforma marrom envelhecida
+Posição: linha 2, coluna 1
+Descrição:
+- cobertura mais achatada;
+- superfície desgastada;
+- pode ser usada como telhado plano antigo, laje rústica ou teto de galpão.
+
+[05] Telhado claro com detalhamento central
+Posição: linha 2, coluna 2
+Descrição:
+- cobertura clara com ornamentos/padrões no centro;
+- pode ser interpretada como:
+  - telhado nobre;
+  - cobertura arquitetônica refinada;
+  - teto de estrutura importante.
+
+[06] Cobertura escura cinza/arroxeada
+Posição: linha 2, coluna 3
+Descrição:
+- bloco de cobertura pesado, escuro;
+- aparência de metal, pedra escura ou telhado industrial antigo.
+
+========================================================
+3. TERCEIRA LINHA — COBERTURAS ESPECIAIS
+========================================================
+
+[07] Cobertura multicolorida / telhado decorado
+Posição: linha 3, coluna 1
+Descrição:
+- topo com padrão colorido;
+- lembra cobertura ornamental, vitral superior ou telhado de construção estilizada.
+
+[08] Conjunto de domos/cúpulas brancas
+Posição: linha 3, coluna 2
+Descrição:
+- grupo de volumes arredondados brancos;
+- pode representar:
+  - cobertura em cúpulas;
+  - telhado de templo;
+  - edifício especial;
+  - complexo arquitetônico branco.
+
+[09] Telhado piramidal azul-acinzentado
+Posição: linha 3, coluna 3
+Descrição:
+- forma piramidal sobre base isométrica;
+- pode ser usado como telhado central, cobertura de torre ou estrutura monumental.
+
+========================================================
+4. QUARTA LINHA — COBERTURAS DE PEDRA / ESTRUTURAS MONUMENTAIS
+========================================================
+
+[10] Telhado/estrutura cinza-clara em degraus
+Posição: linha 4, coluna 1
+Descrição:
+- cobertura escalonada;
+- lembra telhado de pedra, zigurate baixo ou cobertura em camadas.
+
+[11] Telhado/plataforma monumental de pedra
+Posição: linha 4, coluna 2
+Descrição:
+- grande cobertura quadrada;
+- padrão geométrico central;
+- pode representar:
+  - teto de templo;
+  - cobertura de construção monumental;
+  - topo de altar/edifício especial.
+
+========================================================
+RESUMO POR TIPO
+========================================================
+
+RÚSTICOS / PALHA / MADEIRA
+- [01] telhado marrom-claro
+- [03] telhado marrom alto
+
+TELHA CERÂMICA / COBERTURAS REGULARES
+- [02] telhado vermelho
+- [04] cobertura plana envelhecida
+
+ARQUITETÔNICOS / DECORADOS
+- [05] cobertura clara detalhada
+- [07] cobertura decorada multicolorida
+- [11] cobertura monumental de pedra
+
+ESCUROS / INDUSTRIAIS / PEDRA
+- [06] cobertura escura
+- [09] telhado piramidal
+- [10] cobertura escalonada
+
+ESPECIAIS
+- [08] conjunto de domos/cúpulas
+
+========================================================
+USO SUGERIDO
+========================================================
+
+Esses sprites funcionam bem como:
+- telhados para casas isométricas;
+- coberturas de galpões;
+- tetos de templos;
+- estruturas especiais para mapas;
+- construções de fantasia;
+- prédios decorativos em jogos de estratégia e RPG.
+
+========================================================
+RECOMENDAÇÃO TÉCNICA
+========================================================
+
+1. Tratar cada elemento como sprite independente.
+2. Organizar por categoria:
+   - telhados rústicos;
+   - telhados cerâmicos;
+   - coberturas especiais;
+   - coberturas monumentais.
+3. Usar em combinação com paredes/base de edifícios isométricos.
+4. Pivô sugerido:
+   - centro inferior da base isométrica.
+5. Não interpretar essas peças como terreno modular de chão.
+6. Se necessário, separar em pastas:
+   - roof_thatch
+   - roof_tile
+   - roof_stone
+   - roof_special
+
+========================================================
+OBSERVAÇÃO FINAL
+========================================================
+
+A classificação anterior como “estruturas de terreno” foi imprecisa.
+A leitura mais adequada é realmente a de telhados/coberturas isométricas.

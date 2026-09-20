@@ -1,0 +1,400 @@
+DESCRIÇÃO INDIVIDUAL DO TILESET — grassland_tiles(1).png
+========================================================
+
+Tamanho da imagem: 1024 × 1344 px
+Tipo: tileset isométrico
+Origem das coordenadas: canto superior esquerdo
+Eixo X: cresce para a direita
+Eixo Y: cresce para baixo
+
+GRADE-BASE VISUAL
+-----------------
+Cada tile-base isométrico ocupa aproximadamente:
+- 64 px de largura
+- 32 px de altura
+
+Referência:
+- Colunas: C00 até C15
+- Linhas: R00 até R41
+
+Fórmulas:
+- X inicial = coluna × 64
+- Y inicial = linha × 32
+
+IMPORTANTE:
+Vários objetos (árvores, cabanas, ruínas, barcos, cavernas etc.)
+ocupam mais de uma célula e devem ser tratados como sprites/objetos
+independentes, e não recortados cegamente em blocos 64×32.
+
+
+========================================================
+1. TERRENO BÁSICO
+========================================================
+
+[R00 | Y=0..31 | C00..C15]
+- 16 variações de tile isométrico de grama/terra.
+- Funcionam como chão principal.
+
+[R01 | Y=32..63 | C00..C15]
+- 16 variações de terreno com pedra/caminho.
+- Podem ser usadas como:
+  - caminho de pedra;
+  - solo pedregoso;
+  - transição entre áreas.
+
+
+========================================================
+2. PENHASCOS E ROCHAS
+========================================================
+
+[R02..R04 | Y=64..159]
+- Conjunto de paredes e bordas de penhasco.
+- Topos com grama.
+- Faces rochosas verticais.
+- Cantos internos e externos.
+- Peças para criação de plataformas elevadas.
+
+Distribuição aproximada:
+- C00..C01: faces verticais de penhasco.
+- C02..C03: peças de topo/canto.
+- C04..C05: faces rochosas alternativas.
+- C06..C07: bordas/cantos.
+- C08..C09: faces de penhasco.
+- C10..C11: bordas superiores.
+- C12..C13: faces rochosas.
+- C14..C15: cantos/transições.
+
+[R05..R07 | Y=160..255]
+- Continuação das peças de penhasco.
+- Bases inferiores.
+- Cantos.
+- Transições de terreno elevado.
+
+
+========================================================
+3. ACAMPAMENTO E TENDAS
+========================================================
+
+[R05..R07 | aproximadamente C08..C11]
+- Duas barracas/tendas de acampamento.
+- Uma em tons marrons mais escuros.
+- Outra em tons bege/marrom-claro.
+- Cada barraca ocupa várias células.
+
+[R08 | Y=256..287]
+- Segmentos de madeira e cercas.
+- Peças horizontais e diagonais.
+
+[R09 | Y=288..319]
+Props de acampamento:
+
+C00
+- Pequena caixa/equipamento escuro.
+
+C01
+- Segunda variação da caixa/equipamento.
+
+C02
+- Mochila/saco/volume de carga.
+
+C03
+- Segunda variação de mochila/saco.
+
+C04
+- Pilha de tábuas/madeira.
+
+C05
+- Segunda pilha de madeira.
+
+C06
+- Fogueira.
+
+C07
+- Toco/pequena base de trabalho.
+
+C08..C11
+- Segmentos de cerca/trilhos de madeira.
+
+C12..C15
+- Portão, cercas horizontais e peças diagonais.
+
+
+========================================================
+4. VEGETAÇÃO PEQUENA
+========================================================
+
+[R10..R11 | Y=320..383]
+
+C00..C01
+- Plantas largas/folhagens rasteiras.
+
+C02..C03
+- Capim alto.
+
+C04..C05
+- Arbustos verdes.
+
+C06..C07
+- Flores/plantas com haste.
+
+C08..C09
+- Arbustos pequenos verde-escuros.
+
+C10..C11
+- Arbustos amarelados/oliva.
+
+C12..C15
+- Tufos de capim seco/amarelado em diferentes tamanhos.
+
+
+========================================================
+5. PEDRAS, TOCOS E CEMITÉRIO
+========================================================
+
+[R12..R14 | Y=384..479]
+
+C00..C03
+- Pequenas pedras.
+- Tocos.
+- Troncos quebrados.
+- Pequenos elementos naturais.
+
+C04..C07
+- Quatro pilares/colunas de pedra natural.
+- Podem funcionar como formações rochosas verticais.
+
+C08..C09
+- Tocos de árvore cortada em variações.
+
+C10..C11
+- Postes/placas de madeira envelhecida.
+
+C12..C13
+- Lápides simples.
+
+C14..C15
+- Lápides/monumentos funerários mais altos.
+
+
+========================================================
+6. ÁGUA E PENHASCOS COM ÁGUA
+========================================================
+
+[R15..R18 | Y=480..607]
+
+C00..C07
+- Bordas de penhasco sobre água.
+- Cantos.
+- Transições de margem.
+- Peças para rios, lagos e ilhas.
+
+C08..C13
+- Quatro variações de barcos/canoas de madeira.
+- Alguns barcos ocupam várias células em largura.
+
+[R19 | Y=608..639 | C00..C15]
+- Linha de tiles-base de água escura.
+- Pode ser usada como superfície contínua para:
+  - rios;
+  - lagos;
+  - canais;
+  - áreas sob pontes.
+
+
+========================================================
+7. PONTES, CAIS E DECKS
+========================================================
+
+[R20..R21 | Y=640..703]
+
+C00..C11
+- Plataformas de madeira.
+- Pontes.
+- Passarelas.
+- Cais/decks.
+
+C12..C15
+- Extremidades de ponte.
+- Peças de canto.
+- Segmentos menores.
+- Algumas variantes possuem sombra sobre a água.
+
+
+========================================================
+8. CABANAS, RUÍNAS E ESTRUTURAS GRANDES
+========================================================
+
+[R22..R27 | Y=704..895]
+
+C00..C03
+- Cabana de madeira — variante 1.
+- Construção grande.
+- Telhado marrom.
+- Paredes de madeira.
+
+C04..C07
+- Cabana de madeira — variante 2.
+- Formato diferente da primeira.
+
+C08..C11
+- Ruína/torre circular de pedra.
+- Estrutura interna com elementos de madeira.
+- Sprite grande multi-célula.
+
+C12..C15
+- Escadaria/plataforma de pedra.
+- Vegetação sobre a estrutura.
+- Sprite grande.
+
+
+========================================================
+9. CAVERNAS E MINAS
+========================================================
+
+[R28..R30 | Y=896..991]
+
+C00..C01
+- Entrada de caverna natural.
+
+C02..C03
+- Segunda variação de caverna/abertura rochosa.
+
+C03..C05 aproximadamente
+- Entradas de mina/caverna reforçadas com vigas de madeira.
+- Variantes com estrutura de sustentação.
+
+
+========================================================
+10. ÁRVORES MÉDIAS
+========================================================
+
+[R31..R35 | Y=992..1151]
+
+C00..C07
+- Quatro árvores/palmeiras.
+- Folhagem azul-esverdeada.
+- Tronco fino.
+- Cada árvore ocupa várias células.
+
+C08..C15
+- Quatro árvores secas.
+- Sem folhas.
+- Galhos longos e irregulares.
+
+
+========================================================
+11. ÁRVORES GRANDES
+========================================================
+
+[R36..R41 | Y=1152..1343]
+
+C00..C07
+- Quatro coníferas/árvores altas.
+- Folhagem verde-escura.
+- Formato vertical.
+
+C08..C15
+- Quatro árvores frondosas.
+- Copas grandes.
+- Tons verde-amarelados.
+- Cada árvore ocupa várias células.
+
+
+========================================================
+RESUMO POR FAIXA
+========================================================
+
+R00
+- grama/terra
+
+R01
+- pedra/caminho
+
+R02..R07
+- penhascos, paredes rochosas, cantos e bordas
+- tendas no setor direito
+
+R08..R09
+- cercas
+- props de acampamento
+- fogueira
+- madeira
+
+R10..R11
+- plantas
+- capim
+- arbustos
+- flores
+
+R12..R14
+- pedras
+- tocos
+- pilares
+- placas
+- lápides
+
+R15..R18
+- penhasco + água
+- barcos
+
+R19
+- água
+
+R20..R21
+- pontes
+- cais
+- decks
+
+R22..R27
+- cabanas
+- ruína circular
+- estrutura de pedra
+
+R28..R30
+- cavernas
+- minas
+
+R31..R35
+- palmeiras/árvores médias
+- árvores secas
+
+R36..R41
+- árvores altas
+- árvores frondosas
+
+
+========================================================
+RECOMENDAÇÃO DE USO EM ENGINE
+========================================================
+
+TERRENO
+- Use TileMap/Grid isométrico de 64×32.
+- O chão pode ser recortado regularmente.
+
+OBJETOS GRANDES
+- Árvores, casas, ruínas, cavernas, barcos e tendas devem ser
+  cadastrados como sprites independentes.
+
+ORIGEM/PIVÔ
+- Para objetos altos, use como pivô o pé/base visual do objeto.
+- Isso ajuda na ordenação correta em Y.
+
+COLISÃO
+- Árvores: colisão apenas no tronco/base.
+- Casas: colisão na base/paredes.
+- Penhascos: colisão nas faces bloqueadas.
+- Água: colisão ou navegação separada.
+- Cercas: colisão seguindo o segmento.
+- Lápides/pedras: colisões pequenas na base.
+
+ORDENAÇÃO
+- Em jogo isométrico/top-down, ordenar objetos pelo Y da base.
+- Não ordenar pela altura total do sprite.
+
+TILED
+- Tile Layer: chão, água, caminho e penhasco modular.
+- Object Layer: árvores, casas, barcos, tendas, ruínas e props.
+
+GODOT / UNITY
+- TileMap/Grid: terreno.
+- Sprite2D/GameObject separado: objetos grandes.
